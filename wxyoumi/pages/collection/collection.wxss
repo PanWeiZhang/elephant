@@ -1,0 +1,156 @@
+#warpper{
+    width:750rpx;
+    max-width:750rpx;
+    margin:0rpx auto;
+    display:inline-block;
+    background-color:#F2F2F2;
+    overflow: hidden;
+  }
+
+  /*收藏总数量 start*/
+  .collection-number{
+    width:690rpx;
+    height:75rpx;
+    padding:0rpx 30rpx;
+    position: relative;
+  }
+  .collection-number text{
+    text-align: left;
+    line-height: 75rpx;
+    color:#969696;
+  }
+  .collection-number .cNum{
+    color:#E43C3F;
+  }
+  .collection-number .edit-collection{
+    width: 40rpx;
+    height: 38rpx;
+    position: absolute;
+    right: 20rpx;
+    top: 17rpx;
+    background: url("http://m.youmias.com/static/images/common/edit.png") no-repeat;
+    background-size:100% 100%;
+  }
+  .collection-number .del-collection{
+    width: 43rpx;
+    height: 38rpx;
+    position: absolute;
+    right: 119rpx;
+    top: 17rpx;
+    background: url("http://m.youmias.com/static/images/common/del.png") no-repeat;
+    background-size:100% 100%;
+  }
+ .collection-number .all-collection{
+    width: 40rpx;
+    height: 38rpx;
+    position: absolute;
+    right: 205rpx;
+    top: 17rpx;
+    background: url("http://m.youmias.com/static/images/common/all_active.png") no-repeat;
+    background-size:100% 100%;
+  }
+  .collection-number .allCollectionActive{
+    background: url("http://m.youmias.com/static/images/common/all_activeTrue.png") no-repeat;
+    background-size:100% 100%;
+  }
+  /*收藏总数量 end*/
+
+  /*收藏商品列表 start*/
+  .shoppingRecommend{
+    display: inline-block;
+    padding:0rpx 4.999995rpx;
+    background-color:#F2F2F2;
+    width:750rpx;
+  }
+  .pro-recommend-item{
+    float:left;
+    background:#fff;
+    width:355rpx;
+    margin-bottom: 15.0000088095rpx;
+    margin-left:4.999995rpx;
+  }
+  .pro-recommend-item:nth-child(odd){
+    margin-right:14.79rpx;
+  }
+  .pro-recommend-img{
+    width:355rpx;
+    height:375.000005952rpx;
+    margin-bottom:9.99999rpx;
+  }
+  .pro-recommend-img image{
+    width:100%;
+    height:100%;
+  }
+  .pro-recommend-base-info{
+    position: relative;
+    color: #363636;
+    padding:0rpx 15.0000088095rpx;
+    padding-bottom: 20.0000038095rpx;
+  }
+  .pro-recommend-base-info .pro-recommend-btns{
+    width:130rpx;
+    height:79.9999914285rpx;
+    background:#fff;
+  }
+  .pro-recommend-base-info .pro-recommend-btns text{
+    padding:9.99999rpx 20.0000038095rpx;
+    display: inline-block;
+    border:1rpx solid #878787;
+    color:#333;
+    border-radius: 2.999997rpx;
+    margin-top:24.9999988095rpx;
+    float:left;
+    font-size:24rpx;
+  }
+  .pro-recommend-base-name{
+    height:63rpx;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+  .pro-recommend-base-price{
+    font-size:30rpx;
+    margin-top:29.999993809499998rpx;
+    color:#FF6600;
+    text-align: left;
+  }
+  .pro-recommend-aux{
+    position: absolute;
+    right: 15.0000088095rpx;
+    bottom: 23.8095rpx;
+    width: 59.52375rpx;
+    height: 59.52375rpx;
+    background: url("http://m.youmias.com/static/images/common/add_shoppingCar.png") no-repeat;
+    background-size:100% 100%;
+  }
+
+  .pro-recommend-auxDel{
+    position: absolute;
+    right: 107.14275rpx;
+    bottom: 30.95235rpx;
+    width: 42.8571rpx;
+    height: 42.8571rpx;
+    background: url("http://m.youmias.com/static/images/common/tick_gary2.png") no-repeat;
+    background-size:100% 100%;
+  }
+  .pro-auxDelHide{
+     display: none;
+  }
+
+  .proRecommendAuxDelActive{
+    background: url("http://m.youmias.com/static/images/common/tick_active3.png") no-repeat;
+    background-size:100% 100%;
+  }
+  /*收藏商品列表 end*/
+
+
+  /*分隔块 start*/
+
+  #interval-20{
+    width:750rpx;
+    height:20.0000038095rpx;
+    background-color:#F2F2F2;
+  }
+
+  /*分隔块 end*/

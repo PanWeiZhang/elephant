@@ -1,0 +1,240 @@
+ #warpper{
+    width:750rpx;
+    margin:0rpx auto;
+  }
+
+
+  /*登陆基础信息验证 start */
+  .login-verification{
+    width:750rpx;
+  }
+  .login-form-phone{
+    display: inline-block;
+    width:690rpx;
+    padding:0rpx 30rpx 60rpx 30rpx;
+  }
+  .user-login-phone{
+    position: relative;
+    width:476rpx;
+    height:90rpx;
+    border-bottom:1rpx solid #ddd;
+    padding-left:214rpx;
+  }
+  .user-login input{
+    border:0rpx;
+    width:100%;
+    height:100%;
+    font-size:24rpx;
+  }
+  .user-login-phone .verCodeTxt{
+    width:250rpx;
+  }
+  .user-login-phone input{
+    border:0rpx;
+    width:100%;
+    height:100%;
+    font-size:24rpx;
+  }
+  .user-accPwd-name{
+    font-style:normal;
+    position: absolute;
+    left:30rpx;
+    top:0;
+    line-height:100rpx;
+    font-size:26rpx;
+    letter-spacing: 10rpx;
+    color:#333;
+  }
+  .user-accPwd-phoneName{
+    font-style:normal;
+    position: absolute;
+    left:30rpx;
+    top:0;
+    line-height:100rpx;
+    font-size:26rpx;
+    color:#333;
+  }
+  .user-accPwd-VerifCode{
+    font-style:normal;
+    position: absolute;
+    right:30rpx;
+    top:0;
+    line-height:100rpx;
+    font-size:26rpx;
+    color:#333;
+  }
+  .login{
+    width:640rpx;
+    height:80rpx;
+    padding:0rpx 25rpx;
+    background-color:#FF6600;
+    border-radius:7rpx;
+    margin-top:79.9999914285rpx;
+  }
+ .regiUser{
+    display: inline-block;
+    width:100%;
+    line-height:80rpx;
+    color:#fff;
+    font-size:32rpx;
+    text-align: center;
+  }
+  .login-auxiliary{
+    width:100%;
+    padding-right:25rpx;
+  }
+  .forget-password{
+    width:100%;
+    height:65rpx;
+  }
+  .forget-password text{
+    color:#333;
+    text-align: right;
+  }
+  .quick-register{
+    margin:0rpx auto;
+    width:190rpx;
+    height:60rpx;
+  }
+  .quick-register text{
+    line-height:60rpx;
+    text-align: center;
+    color:#FF6600;
+    width:220rpx;
+    height:60rpx;
+    border:1rpx solid #FF6600;
+    font-size: 26rpx;
+    border-radius: 5rpx;
+  }
+  .checkFalseLogin{
+    display: inline-block;
+    color: #999;
+    width:690rpx;
+    height: 30rpx;
+    line-height: 30rpx;
+    text-align: center;
+    margin-top: 20rpx;
+    font-size: 24rpx;
+  }
+  /*登陆基础信息验证 end */
+
+  /*间隔样式 start */
+  .interval-style-1{
+    position: relative;
+    width:100%;
+    height:90rpx;
+    background-color:#fff;
+  }
+  .lineReg{
+    position: absolute;
+    top:44rpx;
+    left:0;
+    width:100%;
+    height:1rpx;
+    background:#999;
+    z-index: 10;
+  }
+  .ontherTxt{
+    position: absolute;
+    top:25rpx;
+    left:260rpx;
+    color:#999;
+    z-index: 11;
+    padding-left:30rpx;
+    padding-right: 30rpx;
+    background-color:#fff;
+  }
+  /*间隔样式 end */
+
+  /*第三方登陆及协议 start*/
+  .other-login-andAgreement{
+    width:750rpx;
+    display: inline-block;
+    margin-top:80rpx;
+  }
+  .other-login-andAgreement ul{
+    width:750rpx;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+  }
+  .other-login-andAgreement ul li{
+    width:25%;
+    height:80rpx;
+  }
+  .other-login-andAgreement ul li .qq_ico{
+    display:block;
+    width:48rpx;
+    height:48rpx;
+    margin: 0 auto;
+    background:url("http://m.youmias.com/static/images/login/qq_ico.png") no-repeat;
+    background-size:contain;
+  }
+  .other-login-andAgreement ul li .wx_ico{
+    display:block;
+    width:48rpx;
+    height:48rpx;
+    margin: 0 auto;
+    background:url("http://m.youmias.com/static/images/login/wx_ico.png") no-repeat;
+    background-size:contain;
+  }
+  .other-login-andAgreement ul li text{
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    margin-top:10rpx;
+  }
+  .login-agreement{
+    position: relative;
+    width:750rpx;
+    height:143rpx;
+    margin:0px auto;
+    text-align: center;
+  }
+  .login-agreement-txt{
+    margin-top:55rpx;
+  }
+  .login-agreement-true{
+    position: absolute;
+    left:240rpx;
+    top:16rpx;
+    width: 35rpx;
+    height: 35rpx;
+    display: inline-block;
+    background:url("http://m.youmias.com/static/images/login/argeement_tick.png") no-repeat;
+    background-size:100% 100%;
+  }
+  .loginAgreementTrueActive{
+    background:url("http://m.youmias.com/static/images/login/argeement_tick_active.png") no-repeat;
+    background-size:100% 100%;
+  }
+  /* .login-agreement text{
+    line-height: 142.857rpx;
+    text-align: center;
+    color:#333;
+    font-size:28rpx;
+  } */
+  /* .login-agreement p a{
+    color:#333;
+    text-decoration:underline;
+  } */
+  /*第三方登陆及协议 end*/
+
+  /*分隔块 start*/
+
+  #interval-20{
+    width:100%;
+    height:20rpx;
+    background-color:#F2F2F2;
+  }
+
+  /*分隔块 end*/
+
+  /*重置 base.css 中的样式 start */
+  input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{
+    color:#999;
+  }
+  input:-moz-placeholder,textarea:-moz-placeholder{
+    color:#999;
+  }
+  /*重置 base.css 中的样式 end */

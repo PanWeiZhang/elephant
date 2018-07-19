@@ -1,0 +1,90 @@
+<!--index.wxml-->
+<view class='warpper'>
+<!-- 轮播图 搜索栏 start -->
+  <view class="banner">
+    <swiper>
+      <block wx:for="{{imgUrls}}" wx:key="swiperSilider">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image"/>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="seachWapper">
+        <view class="ym-logo">
+            <image src="../imgs/common/red_favicon.png"></image>
+        </view>
+        <view class="ym-keywordSeach">
+            <image src="../imgs/pages/index/seach.png"></image>
+        </view>
+        <view class="seachInput">
+            <input class="ym-seachInput" placeholder="下单抢40元券买空调加1元赠小电"></input>
+        </view> 
+    </view>
+    <view class="ym-login" bindtap="toLogin">
+        <navigator>登录</navigator>
+    </view>
+  </view>
+  <!-- 轮播图 搜索栏 end -->
+  <!-- 主分类菜单  start-->
+    <view class="ym-main-menu">
+        <view id="ym-main-menuList">
+            <view wx:for="{{mainImgUrls}}" wx:key="mainImgUrls" class="ym-main-listItem" bindtap='toProductAllList'>
+              <navigator url="{{item.menuHref}}" hover-class="none">
+                  <view>
+                      <image src="{{item.menuIco}}"/>
+                  </view>
+                  <text class="ym-main-menu-li">{{item.menuName}}</text>
+              </navigator>
+            </view>
+        </view>
+    </view>
+  <!-- 主分类菜单  end -->
+  <!-- 主内容区  start -->
+    <view class="ym-main-container">
+        <!-- 分区一 start -->
+        <view class="ym-container-partition1">
+            <view class="container-title-style1">
+                <image src="https://image4.suning.cn/uimg/cms/img/149559219946350066.png"/>
+            </view>
+            <view class="container-content-style1">
+               <view id="container-list">
+                    <view class='containerItem' wx:for="{{sMoneryList}}" wx:key="" bindtap='toProductList'>
+                        <text style="color: #D81488;">{{item.discountActiveName}}</text>
+                        <text style="color: #E62E31;">{{item.discountActiveDes}}</text>
+                        <view class="content-style1-imgs">
+                            <view class="content-style1-img">
+                                <image src="{{item.describeLeftImg}}"/>
+                            </view>
+                            <view class="content-style1-img">
+                                <image src="{{item.describeRightImg}}"/>
+                            </view>
+                        </view>
+                    </view>
+               </view>
+            </view>
+        </view>
+        <!-- 分区一 end -->
+        <!-- 分区二 start -->
+        <view class="ym-container-partition2">
+            <view class="container-title-style1">
+                <image src="https://image4.suning.cn/uimg/cms/img/149810349982663387.png"/>
+            </view>
+            <view class="container-content-style2">
+               <view id="container2-list">
+                  <view class='container2Item' wx:for="{{hotProductList}}" wx:key="">
+                        <text class="content-style2-title">{{item.title}}</text>
+                        <text class="content-style2-sub">{{item.describe}}</text>
+                        <view class="content-style2-img">
+                            <image src="{{item.url}}"/>
+                        </view>
+                  </view>
+               </view>
+            </view>
+        </view>
+        <!-- 分区二 end -->
+    </view>
+  <!-- 主内容区  end -->
+  <footer-link></footer-link>
+  <bottom-nav></bottom-nav>
+  <view class="spaceLine"></view>
+</view>

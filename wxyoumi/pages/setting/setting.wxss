@@ -1,0 +1,92 @@
+#warpper{
+    width:100%;
+    margin:0rpx auto;
+    background:#EFEFEF;
+  }
+
+  /*账户提示语 start */
+  .account-remind{
+    width:700rpx;
+    height:76rpx;
+    background:#fff;
+    border-bottom: 1rpx solid #E5E5E5;
+    padding:0rpx 25rpx;
+  }
+  .account-remind text{
+    line-height: 76rpx;
+    color:#363636;
+    text-align: left;
+    font-size:22rpx;
+  }
+
+  /*账户提示语 end */
+
+  /*个人 自身 信息  start */
+  .account-oneself-info{
+    background:#fff;
+    position: relative;
+    width:595rpx;
+    height:122rpx;
+    border-bottom: 1rpx solid #E5E5E5;
+    padding-right:25rpx;
+    padding-left:130rpx;
+  }
+  .account-oneself-info text{
+    padding-top:25rpx;
+    text-align: left;
+  }
+  .account-oneself-info text{
+    color:#363636;
+    display:block;
+  }
+  .account-oneself-info span.account-email{
+    color:#999999;
+    margin-top:12rpx;
+  }
+  .account-portrait{
+    position:absolute;
+    top:17rpx;
+    left:25rpx;
+    width:84rpx;
+    height:84rpx;
+    border-radius: 50%;
+    background:url("http://m.youmias.com/static/images/common/wx.jpg") no-repeat;
+    background-size:100% 100%;
+  }
+  /*个人 自身 信息  end */
+
+  /*个人 网站信息  start */
+  .account-site-info{
+    width:750rpx;
+    display: inline-block;
+    background:#fff;
+  }
+  .account-site-info ul li{
+    border-bottom: 1rpx solid #E5E5E5;
+    width:620rpx;
+    height:76rpx;
+    padding-left:30rpx;
+    padding-right:100rpx;
+    display: inline-block;
+    position:relative;
+  }
+  .account-site-info ul li .toNavName{
+    width:620rpx;
+    line-height: 76rpx;
+    height:76rpx;
+    display: inline-block;
+    color:#999999;
+    text-align: left;
+    font-size:22rpx;
+  }
+  .account-site-info ul li .icoToNav{
+    position: absolute;
+    top:21rpx;
+    right:17rpx;
+    display: inline-block;
+    width:25rpx;
+    height:25rpx;
+    background:url("http://m.youmias.com/static/images/common/right_back.png") no-repeat;
+    background-size:100% 100%;
+  }
+  /*个人 网站信息  end */

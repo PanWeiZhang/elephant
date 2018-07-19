@@ -1,0 +1,145 @@
+
+  /*产品评论区 start */
+  .productComments{
+    width:724rpx;
+    padding:13px;
+    display: inline-block;
+  }
+  .pro-comment-title{
+    border-bottom: 1px solid #E2E2E2;
+    width:724rpx;
+    height:60px;
+  }
+  .pro-comment-totalNumber{
+    width:210rpx;
+    height:70rpx;
+    display: inline-block;
+    line-height:71px;
+    float:left;
+    color: #81838E;
+  }
+  .pro-comment-quality{
+    width:130rpx;
+    height:70rpx;
+    display:inline-block;
+    line-height:71px;
+    float:right;
+    color:#F15454;
+  }
+  .pro-quality-good{
+     color:#81838E;
+  }
+  .pro-comment-item{
+    width:100%;
+    display: inline-block;
+    border-bottom: 1px solid #E2E2E2;
+  }
+  .pro-comment-item:last-child{
+    border-bottom: 0px;
+  }
+  .pro-comment-star{
+    margin-top:12.60002px;
+    display: inline-block;
+    width:100%;
+  }
+  .pro-comment-star ul{
+    display: inline-block;
+    width:100%;
+  }
+  .pro-comment-star ul li{
+    float:left;
+    background:url("http://m.youmias.com/static/images/common/star.png") no-repeat;
+    background-size:100% 100%;
+    width:30rpx;
+    height:30rpx;
+    margin-right:8.4px;
+  }
+  .pro-comment-text{
+    margin-top:12.60002px;
+    font-size:24rpx;
+    width:100%;
+    text-align: left;
+  }
+  .pro-comment-text text{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+  .pro-comment-date{
+    margin:13px 0px;
+    font-size:24rpx;
+    color: #81838E;
+    text-align: left;
+  }
+
+  /*产品评论区 end */
+
+  /*产品详情底部nav start */
+  .product-buy-nav{
+    width:750rpx;
+    height: 93rpx;
+    background: #ffffff;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    position: fixed;
+    bottom: 0;
+  }
+  .product-buy-nav ul{
+    width:750rpx;
+  }
+  .product-buy-nav ul li{
+    width: 25%;
+    height:100%;
+    float:left;
+  }
+  .product-buy-nav ul li text{
+    color:#333;
+  }
+  .pro-save{
+    width:100%;
+    height:93rpx;
+  }
+  .pro-save text{
+    text-align: center;
+    display: block;
+  }
+  .pro-save image{
+    margin:0rpx auto;
+    display: block;
+    width:45rpx;
+    height:45rpx;
+    margin-top: 17rpx;
+  }
+  .product-buy-nav ul li.addShoppingCar{
+    background: #FFB042;
+    text-align: center;
+    font-size:27rpx;
+    line-height:92rpx;
+    color:#ffffff;
+  }
+  .product-buy-nav ul li.timelyBuy{
+    font-size:27rpx;
+    text-align: center;
+    line-height:92rpx;
+    background: #F23232;
+    color:#ffffff;
+  }
+  .product-buy-nav ul li.addShoppingCar .addCarTxt{
+    color:#fff;
+  }  
+  .product-buy-nav ul li.timelyBuy .buyTxt{
+    color:#fff;
+  } 
+  /*产品详情底部nav end */
+
+  /*分隔块 start*/
+
+  .interval01{
+    width:750rpx;
+    height:20px;
+    background-color:#F2F2F2;
+  }
+
+  /*分隔块 end*/

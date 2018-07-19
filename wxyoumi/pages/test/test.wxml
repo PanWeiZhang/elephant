@@ -1,0 +1,17 @@
+<!--logs.wxml-->
+<template name="listTemp">
+<view id="ym-main-nav">
+  <view class='ym-main-nav-list' wx:for="{{mainNavList}}" wx:key="">
+       <image src='{{item}}'></image>
+  </view>
+</view>
+</template>
+<template name="secTemp">我是第一个</template>
+<template>我是第二个</template>
+<view id="ym-main-nav">
+  <view class='ym-main-nav-list' wx:for="{{mainNavList}}" wx:key="">
+       <image src='{{item}}'></image>
+  </view>
+</view>
+<view>我是第三个</view>
+<view>{{fourTemp}}</view>

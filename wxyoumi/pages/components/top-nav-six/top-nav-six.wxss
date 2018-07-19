@@ -1,0 +1,27 @@
+  .top_head{
+    position: fixed;
+    width:635rpx;
+    height:85rpx;
+    background:#ffffff;
+    border-bottom: 2rpx solid #dbdbdb;
+    padding-right:100rpx;
+    padding-left:20rpx;
+  }
+  .top_head .seachTxt{
+    position: absolute;
+    right:20rpx;
+    top:23rpx;
+    font-size:26rpx;
+  }
+  .top_head .product-seach-list{
+    width:620rpx;
+  }
+  .top_head .product-seach-list input{
+    width:585rpx;
+    height:60rpx;
+    font-size:24rpx;
+    padding-left:35rpx;
+    margin-top:14rpx;
+    border:1rpx solid #ccc;
+    border-radius: 7rpx
+  }

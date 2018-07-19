@@ -1,0 +1,232 @@
+ 
+ #warpper{
+    width:750rpx;
+    background-color:#F2F2F2;
+    margin:0rpx auto;
+    overflow: hidden;
+  }
+
+  /*我的banner   start */
+  .my-banner{
+    position: relative;
+    width:750rpx;
+    height:252rpx;
+    background: url("http://m.youmias.com/static/images/my/banner.png") no-repeat;
+    background-size: 100% 100%;
+  }
+  .my-portrait{
+    z-index: 20;
+    width:113rpx;
+    height:113rpx;
+    position: absolute;
+    left:20rpx;
+    bottom:29rpx;
+    padding:4.2rpx;
+    border:1rpx solid #6d7290;
+    border-radius: 50%;
+  }
+  .my-portrait i{
+    border-radius: 50%;
+    display: block;
+    width:100%;
+    height:100%;
+    background: url("http://m.youmias.com/static/images/my/wx.jpg") no-repeat;
+    background-size:contain;
+  }
+.my-content-txt{
+    position: absolute;
+    left:160rpx;
+    bottom: 44rpx;
+  }
+.my-phone{
+    font-size:22rpx;
+    color:#fff;
+    line-height: 42rpx;
+    text-align: left;
+  }
+  .my_leve{
+    position: absolute;
+    left:210rpx;
+    top:12rpx;
+    display:block;
+    width:92rpx;
+    height:21rpx;
+    background: url("http://m.youmias.com/static/images/my/lvicon0.png")  no-repeat;
+    background-size:contain;
+  }
+  .my-content-txt .my_nickname{
+    width: 250rpx;
+    display:block;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+  }
+  .my-content-txt .my-account-info{
+    width:100%;
+    color:#fff;
+  }
+  .my-miNum{
+    color:#fff;
+  }
+  .accountManage{
+    padding-left: 250rpx;
+    padding-right: 24rpx;
+    background: url("http://m.youmias.com/static/images/common/back_write.png") center right no-repeat;
+    background-size:21rpx 21rpx;
+    color:#fff;
+  }
+  /*我的banner   end */
+
+  /* 我的菜单 start */
+  .my-allOrder-title{
+    border:1rpx solid #F2F2F2;
+    width:700rpx;
+    background:#fff;
+    height:75rpx;
+    padding-left:25rpx;
+    padding-right:25rpx;
+  }
+  .my-allOrder-title text{
+    display: inline-block;
+    line-height: 75rpx;
+  }
+  .my-allOrder-title .allOrder-txt{
+    float:left;
+    color:#000;
+  }
+  .my-allOrder-title .allOrder-ref{
+    float:right;
+    color:#909090;
+    padding-right:25rpx;
+    background: url("http://m.youmias.com/static/images/common/right_back.png") center right no-repeat;
+    background-size:21rpx 21rpx;
+  }
+
+  .my-menu-list{
+    width:750rpx;
+    display: inline-block;
+    background:#fff;
+  }
+  .my-menu-list ul{
+    width:750rpx;
+  }
+
+  .my-menu-list ul li{
+    float:left;
+    width:187rpx;
+    height:130rpx;
+    padding-top:25rpx;
+  }
+  .my-menu-list ul li image{
+    width:42rpx;
+    display: block;
+    height:38rpx;
+    margin:0rpx auto;
+    border:0;
+  }
+  .my-menu-list ul li text{
+    width:100%;
+    margin-top:8.4rpx;
+    text-align: center;
+    display: inline-block;
+    color:#333;
+  }
+
+  .my-auxiliary-menu{
+    width:100%;
+    display: inline-block;
+    background:#fff;
+  }
+  .my-auxiliary-menu ul{
+    width:750rpx;
+  }
+  .my-auxiliary-menu ul li{
+    float:left;
+    width:185rpx;
+    height:130rpx;
+    border-right:2rpx solid #F2F2F2;
+    padding-top:25.20002rpx;
+  }
+  .my-auxiliary-menu ul li:nth-child(4n){
+    border:0;
+  }
+  .my-auxiliary-menu ul li image{
+    width:42rpx;
+    height:38rpx;
+    display: block;
+    margin:0rpx auto;
+    border:0;
+  }
+  .my-auxiliary-menu ul li text{
+    width:100%;
+    margin-top:8.4rpx;
+    text-align: center;
+    display: inline-block;
+    color:#333;
+  }
+  /* 我的菜单 end */
+
+  /*退出 start */
+  .my-quit{
+    width:750rpx;
+    height:60rpx;
+    padding:0rpx 25rpx;
+    padding-top:84rpx;
+    padding-bottom:240rpx;
+  }
+
+  .my-quit text{
+    display: inline-block;
+    width:700rpx;
+    line-height: 60rpx;
+    text-align: center;
+    font-size:26rpx;
+    color:#000;
+    border:2rpx solid #999999;
+    border-radius: 7rpx;
+  }
+  /*退出 end */
+
+  /*全局导航菜单 start*/
+  #ym-main-nav{
+    width:100%;
+    max-width:630.00064rpx;
+    height:84.00008rpx;
+    background:#ffffff;
+    position: fixed;
+    left:0;
+    bottom:0;
+  }
+  #ym-main-nav ul {
+    width:100%;
+    height:100%;
+  }
+  #ym-main-nav ul li{
+    float:left;
+    width:20%;
+    height:100%;
+  }
+  #ym-main-nav .ym-nav-list{
+    display: inline-block;
+    width:54.60006rpx;
+    height:100%;
+  }
+  #ym-main-nav ul li image{
+    width: 86%;
+    height: 100%;
+    margin-left: 7%;
+    height:100%;
+    max-height: 100%;
+    max-width: 100%;
+  }
+  /*全局导航菜单 end*/
+
+  /*分隔块 start*/
+
+  #interval-20{
+    width:100%;
+    height:16.80002rpx;
+    background-color:#F2F2F2;
+  }
+
+  /*分隔块 end*/

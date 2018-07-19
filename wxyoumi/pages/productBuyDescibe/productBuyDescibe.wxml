@@ -1,0 +1,32 @@
+<view id="warpper">
+  <!--详情 内容  start -->
+  <view class="product_details">
+    <image src="http://m.youmias.com/static/images/productBuy/product_Buy_des_all.jpg" mode="widthFix"/>
+  </view>
+  <!--详情 内容  end -->
+  <view class="interval01"></view>
+   <!-- 产品详情底部nav start  -->
+  <view class="product-buy-nav">
+    <ul>
+      <li>
+        <view class="pro-save pro-collection" bindtap='toCollection'>
+          <image src="http://m.youmias.com/static/images/productBuy/shoucang.png" />
+          <text>收藏</text>
+        </view>
+      </li>
+      <li>
+        <view class="pro-save pro-shopping" bindtap='toCarList'>
+          <image src="http://m.youmias.com/static/images/productBuy/car.png" />
+          <text>购物车</text>
+        </view>
+      </li>
+      <li class="addShoppingCar" bindtap='toCar'>
+        <text class="addCarTxt" >加入购物车</text>
+      </li>
+      <li class="timelyBuy" bindtap='toOrder'>
+        <text class="buyTxt" >立即购买</text>
+      </li>
+    </ul>
+  </view>
+  <!-- 产品详情底部nav end  -->
+</view>

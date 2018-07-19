@@ -1,0 +1,310 @@
+  #warpper{
+    width:750rpx;
+    background:#F3F4F6;
+  }
+  /*筛选条件 start */
+  .productOption{
+    width:750rpx;
+    height:70rpx;
+    background: #ffffff;
+  }
+  .productOption ul li{
+    float:left;
+    width:25%;
+    height:70rpx;
+    -webkit-flex: 1!important;
+    /* //background: url(../../assets/img/index/line.png) no-repeat 0rpx 20rpx; */
+    -webkit-box-flex: 1;
+    background-size: 1rpx 1.5rpx;
+  }
+  .optionContent{
+    position: relative;
+  }
+  .optionContent .optionOrderName{
+    display: inline-block;
+    width:100%;
+    text-align: center;
+    line-height:70rpx;
+  }
+  .optionContent .optionOrder{
+    position: absolute;
+    right: 40rpx;
+    top:24rpx;
+    width:25rpx;
+    height:25rpx;
+    background:url("http://m.youmias.com/static/images/productList/order.png") no-repeat;
+    background-size: 100% 100%;
+  }
+  .optionContent .optionOrderDesc{
+    background:url("http://m.youmias.com/static/images/productList/orderBottom.png") no-repeat;
+    background-size: 100% 100%;
+  }
+  .optionContent .optionOrderAsc{
+    background:url("http://m.youmias.com/static/images/productList/orderTop.png") no-repeat;
+    background-size: 100% 100%;
+  }
+  .optionContent .optionOrderActive{
+    position: absolute;
+    right: 40rpx;
+    top:24rpx;
+    width:25rpx;
+    height:25rpx;
+    background:url("http://m.youmias.com/static/images/productList/orderTop.png") no-repeat;
+    background-size: 100% 100%;
+  }
+  .optionContent .optionOrderVarious{
+    position: absolute;
+    right: 40rpx;
+    top:24rpx;
+    width:25rpx;
+    height:25rpx;
+    background:url("http://m.youmias.com/static/images/productList/orderVarious.png") no-repeat;
+    background-size: 100% 100%;
+  }
+  /*筛选条件 end*/
+
+  /*产品列表 start */
+  .productListContainer{
+    width:100%;
+    display: inline-block;
+  }
+  .productListContainer ul li{
+    width:365rpx;
+    height:510rpx;
+    margin-right:12rpx;
+    background:#ffffff;
+    margin-left:2rpx;
+    float:left;
+    margin-bottom: 15rpx;
+  }
+  .productListContainer ul li:nth-child(2n){
+    margin-right:0rpx;
+  }
+  .productListContainer .proListImg{
+    width:100%;
+    height:358rpx;
+  }
+  .productListContainer .proListImg image{
+    width:100%;
+    height:100%;
+  }
+  .proListDes{
+    padding:15rpx;
+    position: relative;
+  }
+  .proListDes .proCollection{
+    position: absolute;
+    top: 32rpx;
+    right: 20rpx;
+    width: 33rpx;
+    display: inline-block;
+    height: 33rpx;
+    background:url("http://m.youmias.com/static/images/common/heart.png") no-repeat;
+    background-size:100% 100%;
+  }
+  .proListDes .proCollectionActive{
+    background:url("http://m.youmias.com/static/images/common/heart_active.png") no-repeat;
+    background-size:100% 100%;
+  }
+  .proListDes text{
+    line-height: 40rpx;
+    text-align: left;
+  }
+  .proListDes .proDesInfo{
+    width:330rpx;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-top: 15rpx;
+  }
+  /*产品列表 end */
+
+  /*遮罩 start */
+  #ym-mask{
+    width:100%;
+    height:100%;
+    max-width:750rpx;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 110;
+  }
+  /*遮罩 end */
+  /*分类列表 start*/
+  #optionList{
+    width:680rpx;
+    overflow: hidden;
+    height:100%;
+    background: #ffffff;
+    position: fixed;
+    top: 0;
+    right:0rpx;
+    z-index: 120;
+    overflow-y: auto;
+    padding-bottom: 90rpx;
+  }
+  #optionList .publicOption{
+    width:100%;
+    padding:15rpx;
+  }
+  .publicOptionTitle{
+    width:100%;
+    height:64rpx;
+  }
+  .publicOptionTitle text{
+    text-align: left;
+    padding-left: 8rpx;
+    line-height: 64rpx;
+    font-weight: bold;
+  }
+  .publicOptionBody{
+    width:100%;
+    margin-top:15rpx;
+  }
+  .publicOptionBody ul{
+    display: inline-block;
+  }
+  .publicOptionBody ul li{
+    float:left;
+    width:195rpx;
+    height:60rpx;
+    font-size:24rpx;
+    padding:5rpx 3rpx 5rpx 10rpx;
+    background: #EFEFF1;
+    color:#262626;
+    line-height:60rpx;
+    border-radius: 12rpx;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-right:15rpx;
+    margin-left:5rpx;
+    margin-bottom: 15rpx;
+  }
+  /* .publicOptionBody ul li:child-nth(3n){
+    margin-right:0;
+  } */
+  .private1Option{
+    width:100%;
+    padding:15rpx;
+  }
+  .private1OptionTitle{
+    width:100%;
+    height:63.809507619rpx;
+  }
+  .private1OptionTitle text{
+    text-align: left;
+    padding-left: 8rpx;
+    line-height: 64rpx;
+    font-weight: bold;
+  }
+  .private1OptionBody{
+    width:100%;
+    margin-top:15rpx;
+  }
+  .private1OptionBody ul{
+    display: inline-block;
+  }
+  .private1OptionBody ul li{
+    float:left;
+    width:195rpx;
+    height:60rpx;
+    font-size:24rpx;
+    padding:5rpx 3rpx 10rpx 10rpx;
+    background: #EFEFF1;
+    color:#262626;
+    line-height:60rpx;
+    border-radius: 12rpx;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-right:15rpx;
+    margin-left:5rpx;
+    margin-bottom: 15rpx;
+  }
+  #optionList ul li.pobActive{
+    border:1rpx solid #E23734;
+    color:#E23734;
+    background: #fff;
+    width:185rpx;
+    height:56rpx;
+  }
+  .private1OptionGround{
+    width:654rpx;
+    margin-bottom: 20rpx;
+    position: relative;
+    padding-left:6rpx;
+    display: inline-block;
+  }
+  .private1OptionItem{
+    width:300rpx;
+    height:55rpx;
+  }
+  .private1OptionItem input{
+    border:0;
+    width:100%;
+    height:100%;
+    background:#EFEFF1;
+    border-radius: 12rpx;
+    line-height: 54rpx;
+    font-size: 22rpx;
+    text-align: center;
+  }
+  .poit-left{
+    float:left;
+  }
+  .poit-right{
+    float:right;
+  }
+  .poit-middle{
+    position: absolute;
+    left:322rpx;
+    top:26rpx;
+    width:25rpx;
+    height:1rpx;
+    background: #0D0D0D;
+  }
+  .fiexdBtn{
+    border-top:1rpx solid #ccc;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width:680rpx;
+    height: 90rpx;
+    z-index: 130;
+  }
+  .fiexdBtn ul{
+    display: inline-block;
+    width:100%;
+  }
+  .fiexdBtn ul li{
+    float: left;
+    width:50%;
+    height:90rpx;
+    text-align: center;
+    line-height: 90rpx;
+    background: #ffffff;
+    color:#000;
+    font-size:30rpx;
+  }
+  .fiexdBtn ul li.btn-fiexd-active{
+    background: #E23734;
+    color:#fff;
+  }
+  /*分类列表 end*/
+
+  /*重置base.css 中的样式 start */
+  input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{
+    color:#666;
+    text-align: center;
+    font-size:22rpx;
+  }
+  input:-moz-placeholder,textarea:-moz-placeholder{
+    color:#666;
+    text-align: center;
+  }
+  /*重置base.css 中的样式 end */

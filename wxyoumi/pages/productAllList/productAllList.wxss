@@ -1,0 +1,107 @@
+  #warpper{
+    width:750rpx;
+    background:#F3F5F7;
+    margin:0rpx auto;
+  }
+
+  /*全部商品筛选条件 start*/
+  .all-productOption-body{
+    background:#fff;
+    position: absolute;
+    left: 0;
+    top:0rpx;
+    overflow-y: scroll;
+    width:126rpx;
+    height:100%;
+  }
+  .all-productOption-body ul{
+    display: inline-block;
+    width:100%;
+  }
+  .all-productOption-body .proOptionInfo{
+    font-size:23rpx;
+    display: block;
+    width:126rpx;
+    height:80rpx;
+    border-bottom: 1rpx solid #E5E5E5;
+    line-height: 80rpx;
+    text-align: center;
+    color:#000;
+    font-weight: bold;
+  }
+  .all-productOption-body .proOptionActive{
+    color:#F23030;
+  }
+  /*全部商品筛选条件 end*/
+
+  /*全部筛选商品 start */
+  .all-product-body{
+    overflow-y: scroll;
+    padding:16rpx;
+    margin-left:126rpx;
+  }
+  .product-body-banner{
+    width:592rpx;
+    height:195rpx;
+  }
+  .product-body-banner image{
+    width:100%;
+    height:100%;
+  }
+  .allProduct-item{
+    width:100%;
+    display: inline-block;
+  }
+  .animateList{
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+  .classProduct-item{
+    width:100%;
+    display:inline-block;
+    background:#fff;
+  }
+  .classProduct-item ul{
+    width:100%;
+    display: inline-block;
+  }
+  .classProduct-item ul li{
+    width:33.3%;
+    display: inline-block;
+    padding-top:17rpx;
+    padding-bottom:17rpx;
+  }
+  .classProduct-item ul li image{
+    width:101rpx;
+    height:101rpx;
+    display: block;
+    border: 0;
+    margin: 0rpx auto;
+  }
+  .classProduct-item ul li text{
+    display:inline-block;
+    width:100%;
+    line-height: 30rpx;
+    text-align: center;
+    color:#767676;
+  }
+  /*全部筛选商品 end */
+
+  /*分隔块 start*/
+
+  .interval-20{
+    width:100%;
+    height:16.80002rpx;
+    background-color:#F2F2F2;
+  }
+
+  /*分隔块 end*/
+
+  /*重置base.css 中的样式 start */
+  input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{
+    color:#ccc;
+  }
+  input:-moz-placeholder,textarea:-moz-placeholder{
+    color:#ccc;
+  }
+  /*重置base.css 中的样式 end */

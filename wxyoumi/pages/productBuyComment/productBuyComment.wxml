@@ -1,0 +1,54 @@
+<view id="warpper">
+  <view class="productComments">
+    <view class="pro-comment-title">
+      <text class="pro-comment-totalNumber">评价(235654)</text>
+      <view class="pro-comment-quality">
+          <text class="pro-quality-good">好评 </text>
+          <text> 98%</text>
+      </view>
+    </view>
+    <block wx:for="{{commentList}}" wx:key="commentList">
+      <view class="pro-comment-item" >
+        <view class="pro-comment-star">
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+          </view>
+        <view class="pro-comment-text">{{item.commentDec}}</view>
+        <view class="pro-comment-date">{{item.createTime}}</view>
+      </view>
+    </block>
+  </view>
+  <!-- 产品评论区 end  -->
+  <view class="interval01"></view>
+  <footer-link></footer-link>
+  <view class="interval01"></view>
+  <!-- 产品详情底部nav start  -->
+  <view class="product-buy-nav">
+    <ul>
+      <li>
+        <view class="pro-save pro-collection" bindtap='toCollection'>
+          <image src="http://m.youmias.com/static/images/productBuy/shoucang.png" />
+          <text>收藏</text>
+        </view>
+      </li>
+      <li>
+        <view class="pro-save pro-shopping" bindtap='toCarList'>
+          <image src="http://m.youmias.com/static/images/productBuy/car.png" />
+          <text>购物车</text>
+        </view>
+      </li>
+      <li class="addShoppingCar" bindtap='toCar'>
+        <text class="addCarTxt" >加入购物车</text>
+      </li>
+      <li class="timelyBuy" bindtap='toOrder'>
+        <text class="buyTxt" >立即购买</text>
+      </li>
+    </ul>
+  </view>
+  <!-- 产品详情底部nav end  -->
+</view>

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "首页",
+  "usingComponents": {
+    "bottom-nav": "../components/bottom-nav/bottom-nav",
+    "footer-link": "../components/footer-link/footer-link"
+  }
+}

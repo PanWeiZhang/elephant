@@ -1,0 +1,37 @@
+<view id="warpper">
+  <!-- 全部商品筛选条件 start  -->
+  <view class="all-productOption-body" tabindex = "-1">
+    <view tabindex = "-1" style="transform: translateY(0px);">
+        <ul>
+            <block wx:for="{{mainMenuList}}" wx:key="mainMenuList">
+              <li class="proOptionInfo {{item.checked?'proOptionActive':''}}" bindtap="selectType" id="{{item.id}}">{{item.name}}</li>
+            </block>
+        </ul>
+    </view>
+  </view>
+  <!-- 全部商品筛选条件 end  -->
+  <!-- 全部筛选商品 start -->
+  <view class="all-product-body">
+    <view  tabindex = "-1" style="transform: translateY(0px);">
+      <view class="product-body-banner">
+        <image src="https://image2.suning.cn/uimg/cms/img/151425434597005523.jpg"></image>
+      </view>
+      <view class="allProduct-item">
+        <block wx:for="{{goodsList}}" wx:key="goodsList">
+             <view class="classProduct-item" >
+              <view class="interval-20"></view>
+              <ul>
+                  <block wx:for="{{item}}" wx:key="item">
+                    <li bindtap="toProductList">
+                        <image src="{{item.url}}"></image>
+                        <text>{{item.name}}</text>
+                    </li>
+                  </block>
+                </ul>
+            </view>
+        </block>
+      </view>
+    </view>
+  </view>
+  <!-- 全部筛选商品 end  -->
+</view>

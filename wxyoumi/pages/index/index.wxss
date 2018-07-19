@@ -1,0 +1,192 @@
+/**index.wxss**/
+
+.warpper{
+    width:750rpx;
+    max-width:750rpx;
+    margin:0px auto;
+}
+swiper{
+  height:365rpx;
+}
+.slide-image{
+   width:750rpx;
+   height:365rpx;
+}
+
+/** 轮播图 搜索栏 start **/
+
+.banner{
+  width: 750rpx;
+  position: relative;
+}
+.seachWapper{
+    position: absolute;
+    left: 0;
+    top: 10rpx;
+    width: 663rpx;
+    padding-left:10rpx;
+    padding-right:77rpx;
+    height: 60rpx;
+    display: inline-block;
+    z-index: 99;
+}
+.ym-logo{
+    position: absolute;
+    top:2rpx;
+    left:22rpx;
+    display: inline-block;
+    width:25rpx;
+    height:25rpx;
+}
+.ym-keywordSeach{
+    position: absolute;
+    top:5rpx;
+    left:65rpx;
+    display: inline-block;
+    width:25rpx;
+    height:25rpx;
+}
+.ym-logo image,.ym-keywordSeach image{
+    width:25rpx;
+    height:25rpx;
+}
+.seachInput{
+  width:663rpx;
+}
+.seachInput input {
+    width:563rpx;
+    height: 60rpx;
+    background-color: white;
+    border:0px;
+    border-radius: 25rpx;
+    line-height:60rpx;
+    font-size:24rpx;
+    padding-left:100rpx;
+    color: #666;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: middle;
+}
+.ym-login{
+    position: absolute;
+    right:14rpx;
+    top:22rpx;
+    z-index: 99;
+}
+.ym-login navigator{
+    color:#fff;
+    font-size:26rpx;
+}
+
+/** 轮播图 搜索栏 end **/
+
+/*主分类菜单 start */
+.ym-main-menu{
+    width:750rpx;
+    padding-top:25rpx;
+    display: inline-block;
+    border-bottom: 1px solid #e6e6e6;
+}
+.ym-main-menu .ym-main-listItem{
+    float:left;
+    width:150rpx;
+    margin-bottom:36rpx;
+}
+.ym-main-menu .ym-main-listItem navigator image{
+    width:75rpx;
+    height:75rpx;
+    vertical-align: middle;
+    margin-left:38rpx;
+    margin-bottom:10rpx;
+}
+.ym-main-menu-li{
+    color:#444;
+    display: block;
+    text-align:center;
+    font-size:24rpx;
+}
+/*主分类菜单 end */
+/*主内容区  start*/
+.ym-main-container{
+    width:750rpx;
+}
+/*分区一 start*/
+.ym-container-partition1{
+    width:750rpx;
+}
+.container-title-style1{
+    width:750rpx;
+    height:75rpx;
+}
+.container-title-style1 image{
+    width:750rpx;
+    height:75rpx;
+}
+.container-content-style1{
+    display:inline-block;
+    width:750rpx;
+}
+.container-content-style1 .containerItem{
+    width:320rpx;
+    height:226rpx;
+    float:left;
+    border:2rpx solid #F0F0F0;
+    padding:20rpx 25rpx;
+}
+.container-content-style1 .containerItem text{
+    font-size:24rpx;
+    line-height:38rpx;
+    display: block;
+}
+.content-style1-imgs {
+    width:320rpx;
+}
+.content-style1-img{
+    width:160rpx;
+    float:left;
+}
+.content-style1-img image{
+    width:160rpx;
+    height: 160rpx;
+}
+/*分区一 end*/
+/*分区二 start*/
+.ym-container-partition2{
+    width:750rpx;
+}
+.container-content-style2{
+    display: inline-block;
+    width:750rpx;
+}
+.container-content-style2 .container2Item{
+    width:142rpx;
+    float:left;
+    height:226rpx;
+    border:2rpx solid #F0F0F0;
+    padding:20rpx;
+}
+.container-content-style2 .container2Item text{
+    color:#444;
+    line-height:34rpx;
+}
+.container-content-style2 .container2Item text.content-style2-title{
+    font-size:24rpx;
+    font-weight: bold;
+    display: block;
+}
+.container-content-style2 .container2Item text.content-style2-sub{
+    font-size:18rpx;
+}
+.container-content-style2 .container2Item .content-style2-img image{
+    width:143rpx;
+    height:143rpx;
+}
+/*分区二 end*/
+/*主内容区  end*/
+
+/* 空白区间 */
+.spaceLine{
+  height: 40rpx;
+  width:750rpx;
+}

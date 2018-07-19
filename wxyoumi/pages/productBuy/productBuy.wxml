@@ -1,0 +1,173 @@
+<view id="warpper">
+  <!-- 产品详情 轮播图 start  -->
+   <swiper class="swiperBody">
+    <block wx:for="{{lunboData}}" wx:key="lunboData">
+      <swiper-item class="imgItem">
+        <image src="{{item.url}}" class="slide-image"/>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- 产品详情 轮播图 end  -->
+  <!-- 产品基础信息 start  -->
+  <view class="productBaseDes">
+    <view class="productBaseBody">
+      <view class="productBaseInfo">
+        双合依恋 2016春夏新款七分袖休闲格子衬衫宽松圆领棉麻灰色衬衣女 7038 图片色 L
+      </view>
+      <view class="product-by-product"></view></view>
+    <view class="productPrice clearBoth">
+      <text>￥415.20</text>
+    </view>
+  </view>
+  <view class="interval01"></view>
+  <!-- 产品基础信息 end  -->
+  <!-- 产品筛选信息 start  -->
+  <view class="productOptioninfo">
+    <text>已选 <text class="product-color">灰色</text> <text class="product-size">M</text> <text class="product-number">2件</text></text>
+    <text class="product-option-list" bindtap="toggleBuyModel"></text>
+  </view>
+  <!-- 产品筛选信息 end  -->
+  <view class="interval01"></view>
+  <!-- 产品地址信息 start  -->
+  <view class="productAddressinfo">
+    <text>送至 <text class="product-sheng">河北省</text> <text class="product-shi">保定市</text> <text class="product-qu">竞秀区</text></text>
+    <text class="product-address-list" bindtap="openAddressSelcet"></text>
+  </view>
+  <!-- 产品地址信息 end  -->
+  <view class="interval01"></view>
+  <!-- 产品评论区 start  -->
+  <view class="productComments">
+    <view class="pro-comment-title">
+      <text class="pro-comment-totalNumber">评价(25654)</text>
+      <text class="pro-comment-quality">好评 <text> 96%</text></text>
+    </view>
+    <view class="pro-comment-item">
+      <view class="pro-comment-star">
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </view>
+      <view class="pro-comment-text">买家服务态度超好，谢谢！宝贝不错。我会再光临的，好评</view>
+      <view class="pro-comment-date">2017-07-30</view>
+    </view>
+    <view class="pro-comment-item" style="border:0px;">
+      <view class="pro-comment-star">
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </view>
+      <view class="pro-comment-text">谢谢！我会再光临的，好评</view>
+      <view class="pro-comment-date">2017-06-02</view>
+    </view>
+    <view class="pro-see-all-comment" bindtap='toAllcomment'>
+      <button class="seeAllComment">查看全部评论</button>
+    </view>
+  </view>
+  <footer-link></footer-link>
+  <!-- 产品评论区 end  -->
+  <view class="interval01"></view>
+  <!-- 产品详情底部nav start  -->
+  <view id="product-buy-nav">
+    <ul>
+      <li>
+        <view class="pro-save pro-collection" bindtap="toCollection">
+          <image src="http://m.youmias.com/static/images/productBuy/shoucang.png"></image>
+          <text>收藏</text>
+        </view>
+      </li>
+      <li>
+        <view class="pro-save pro-shopping" bindtap="toCarList">
+          <image src="http://m.youmias.com/static/images/productBuy/car.png"></image>
+          <text>购物车</text>
+        </view>
+      </li>
+      <li class="addShoppingCar" bindtap="toCar">
+        <text class='addCarTxt'>加入购物车</text>
+      </li>
+      <li class="timelyBuy" bindtap="toOrder">
+        <text class='buyTxt'>立即购买</text> 
+      </li>
+    </ul>
+  </view>
+  <!-- 产品详情底部nav end  -->
+  <!-- 遮罩 start  -->
+  <block wx:if="{{showdow}}">
+    <view id="ym-mask"></view>
+  </block>
+  <!-- 遮罩 end  -->
+  <!-- 产品筛选信息 —— 弹框  start  -->
+  <block wx:if="{{buyParamGroup}}">
+  <view class="product-screen-alert">
+    <view class="product-screen-container">
+      <view class="prduct-screen-baseInfo">
+        <view class="product-screenBase-img">
+          <image src="http://m.youmias.com/static/images/productBuy/buy.png"></image>
+        </view>
+        <view class="product-screenBase-more">
+          <text>￥115.20</text>
+        </view>
+        <text class="product-screen-close" bindtap="closeBuyAlert"></text>
+      </view>
+      <view class="prduct-info-name prduct-screen-color">
+        <text>颜色</text>
+        <ul>
+          <block wx:for="{{proColor}}"  wx:key="proColor">
+            <li bindtap="toggleColor" data-index="{{index}}" class="{{index == colorCheckindex ? 'proInfoNameActive' : '' }}">{{item}}</li>
+          </block>
+        </ul>
+      </view>
+      <view class="prduct-info-name prduct-screen-size">
+        <text>尺寸</text>
+        <ul>
+          <block wx:for="{{proSize}}" wx:key="proSize">
+              <li bindtap="toggleSize" data-index="{{index}}" class="{{index == sizeCheckindex ? 'proInfoNameActive': ''}}">{{item}}</li>
+          </block>
+        </ul>
+      </view>
+      <view class="prduct-info-name prduct-screen-number">
+        <text>数量</text>
+        <view class="calcNmber">
+          <text class="addDesSum decProductNum" bindtap="minusCarNum"></text>
+          <input type="number" maxlength="3" class="numberValueInput numberVal" value='{{goodsNum}}'/>
+          <text class="addDesSum addProductNum" bindtap="addCarNum"></text>
+        </view>
+      </view>
+    </view>
+    <view class="product-screen-nav">
+      <ul>
+        <li class="pro-screen-nav-car" bindtap="addToShopCar">加入购物车</li>
+        <li class="pro-screen-nav-buy" bindtap="toBuy">立即购买</li>
+      </ul>
+    </view>
+  </view>
+  </block>
+  <!-- 产品筛选信息 —— 弹框  end  -->
+
+  <!-- 产品地址选择信息 ——  弹框  start  -->
+  <block wx:if="{{openAdressOption}}">
+  <view class="product-address-screen">
+    <view class="pro-addScr-titile">
+      <view class="pro-addScr-back" bindtap="closeAdress"></view>
+      <text>配送至</text>
+    </view>
+    <view class="pro-addScr-container">
+      <ul>
+        <block wx:for="{{citys}}" wx:key="citys">
+            <li data-index="{{index}}" bindtap="toogleAddress">
+              <text class="pro-addScr-tick {{index == addressActive ? 'proAddScrTickActive': ''}}"></text>
+              <text class="">{{item}}</text>
+            </li>
+        </block>
+      </ul>
+    </view>
+  </view>
+  </block>
+  <!-- 产品地址选择信息 ——  弹框  end  -->
+</view>

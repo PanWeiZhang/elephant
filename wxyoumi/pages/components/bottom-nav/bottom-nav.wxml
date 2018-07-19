@@ -1,0 +1,5 @@
+<view class="ym-main-nav">
+    <view class='ym-main-nav-list' wx:for="{{mainNavList}}" wx:key="mainNavList" data-index="{{index}}" hover-class="none" bindtap='toLink'>
+        <image class="ym-main-img" src='{{item}}'></image>
+    </view>
+  </view>
