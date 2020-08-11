@@ -1,6 +1,0 @@
-<view class="top_head">
-  <view class="product-seach-list">
-    <input type="text"  bindinput="keyword" placeholder="冬季畅销羽绒服"/>
-  </view>
-  <view class="seachTxt" bindtap="toProductList">搜索</view>
-</view>

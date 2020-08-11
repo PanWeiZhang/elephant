@@ -1,7 +1,0 @@
-/**app.wxss**/
-view,image,navigator{
-  outline:none;
-}
-text,navigator{
-  font-size:24rpx;
-}

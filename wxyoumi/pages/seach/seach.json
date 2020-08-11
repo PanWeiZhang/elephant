@@ -1,6 +1,0 @@
-{
-  "navigationBarTitleText": "搜索",
-  "usingComponents": {
-    "top-nav-six": "../components/top-nav-six/top-nav-six"
-  }
-}

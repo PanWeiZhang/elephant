@@ -1,6 +1,0 @@
-{
-  "navigationBarTitleText": "购买",
-  "usingComponents": {
-    "footer-link": "../components/footer-link/footer-link"
-  }
-}

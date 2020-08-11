@@ -1,9 +1,0 @@
-<!--logs.wxml-->
-<view class="testStyle">
-   我是测试
-   <view>{{test}}</view>
-</view>
-<import src="../common/bottomNav/bottomNav"/>
-<template is="listTemp"></template>
-<template is="secTemp"></template>
-<include src="../common/bottomNav/bottomNav"/>
