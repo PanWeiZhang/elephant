@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.youmias.elephant.dao.UserMapper">
+  <resultMap id="BaseResultMap" type="com.youmias.elephant.po.User">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="nickname" jdbcType="VARCHAR" property="nickname" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+    <result column="county_id" jdbcType="INTEGER" property="countyId" />
+    <result column="city_id" jdbcType="INTEGER" property="cityId" />
+    <result column="province_id" jdbcType="INTEGER" property="provinceId" />
+    <result column="industry_two_id" jdbcType="INTEGER" property="industryTwoId" />
+    <result column="industry_first_id" jdbcType="INTEGER" property="industryFirstId" />
+    <result column="profession" jdbcType="VARCHAR" property="profession" />
+    <result column="created_at" jdbcType="TIMESTAMP" property="createdAt" />
+    <result column="updated_at" jdbcType="TIMESTAMP" property="updatedAt" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.youmias.elephant.po.User">
+    <result column="avatar" jdbcType="LONGVARBINARY" property="avatar" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, name, nickname, password, mobile, county_id, city_id, province_id, industry_two_id, 
+    industry_first_id, profession, created_at, updated_at
+  </sql>
+  <sql id="Blob_Column_List">
+    avatar
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from user
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from user
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.youmias.elephant.po.User">
+    insert into user (id, name, nickname, 
+      password, mobile, county_id, 
+      city_id, province_id, industry_two_id, 
+      industry_first_id, profession, created_at, 
+      updated_at, avatar)
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{nickname,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}, #{countyId,jdbcType=INTEGER}, 
+      #{cityId,jdbcType=INTEGER}, #{provinceId,jdbcType=INTEGER}, #{industryTwoId,jdbcType=INTEGER}, 
+      #{industryFirstId,jdbcType=INTEGER}, #{profession,jdbcType=VARCHAR}, #{createdAt,jdbcType=TIMESTAMP}, 
+      #{updatedAt,jdbcType=TIMESTAMP}, #{avatar,jdbcType=LONGVARBINARY})
+  </insert>
+  <insert id="insertSelective" parameterType="com.youmias.elephant.po.User">
+    insert into user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="nickname != null">
+        nickname,
+      </if>
+      <if test="password != null">
+        password,
+      </if>
+      <if test="mobile != null">
+        mobile,
+      </if>
+      <if test="countyId != null">
+        county_id,
+      </if>
+      <if test="cityId != null">
+        city_id,
+      </if>
+      <if test="provinceId != null">
+        province_id,
+      </if>
+      <if test="industryTwoId != null">
+        industry_two_id,
+      </if>
+      <if test="industryFirstId != null">
+        industry_first_id,
+      </if>
+      <if test="profession != null">
+        profession,
+      </if>
+      <if test="createdAt != null">
+        created_at,
+      </if>
+      <if test="updatedAt != null">
+        updated_at,
+      </if>
+      <if test="avatar != null">
+        avatar,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="nickname != null">
+        #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null">
+        #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="countyId != null">
+        #{countyId,jdbcType=INTEGER},
+      </if>
+      <if test="cityId != null">
+        #{cityId,jdbcType=INTEGER},
+      </if>
+      <if test="provinceId != null">
+        #{provinceId,jdbcType=INTEGER},
+      </if>
+      <if test="industryTwoId != null">
+        #{industryTwoId,jdbcType=INTEGER},
+      </if>
+      <if test="industryFirstId != null">
+        #{industryFirstId,jdbcType=INTEGER},
+      </if>
+      <if test="profession != null">
+        #{profession,jdbcType=VARCHAR},
+      </if>
+      <if test="createdAt != null">
+        #{createdAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatedAt != null">
+        #{updatedAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="avatar != null">
+        #{avatar,jdbcType=LONGVARBINARY},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.youmias.elephant.po.User">
+    update user
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="nickname != null">
+        nickname = #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null">
+        mobile = #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="countyId != null">
+        county_id = #{countyId,jdbcType=INTEGER},
+      </if>
+      <if test="cityId != null">
+        city_id = #{cityId,jdbcType=INTEGER},
+      </if>
+      <if test="provinceId != null">
+        province_id = #{provinceId,jdbcType=INTEGER},
+      </if>
+      <if test="industryTwoId != null">
+        industry_two_id = #{industryTwoId,jdbcType=INTEGER},
+      </if>
+      <if test="industryFirstId != null">
+        industry_first_id = #{industryFirstId,jdbcType=INTEGER},
+      </if>
+      <if test="profession != null">
+        profession = #{profession,jdbcType=VARCHAR},
+      </if>
+      <if test="createdAt != null">
+        created_at = #{createdAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatedAt != null">
+        updated_at = #{updatedAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="avatar != null">
+        avatar = #{avatar,jdbcType=LONGVARBINARY},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.youmias.elephant.po.User">
+    update user
+    set name = #{name,jdbcType=VARCHAR},
+      nickname = #{nickname,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      mobile = #{mobile,jdbcType=VARCHAR},
+      county_id = #{countyId,jdbcType=INTEGER},
+      city_id = #{cityId,jdbcType=INTEGER},
+      province_id = #{provinceId,jdbcType=INTEGER},
+      industry_two_id = #{industryTwoId,jdbcType=INTEGER},
+      industry_first_id = #{industryFirstId,jdbcType=INTEGER},
+      profession = #{profession,jdbcType=VARCHAR},
+      created_at = #{createdAt,jdbcType=TIMESTAMP},
+      updated_at = #{updatedAt,jdbcType=TIMESTAMP},
+      avatar = #{avatar,jdbcType=LONGVARBINARY}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.youmias.elephant.po.User">
+    update user
+    set name = #{name,jdbcType=VARCHAR},
+      nickname = #{nickname,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      mobile = #{mobile,jdbcType=VARCHAR},
+      county_id = #{countyId,jdbcType=INTEGER},
+      city_id = #{cityId,jdbcType=INTEGER},
+      province_id = #{provinceId,jdbcType=INTEGER},
+      industry_two_id = #{industryTwoId,jdbcType=INTEGER},
+      industry_first_id = #{industryFirstId,jdbcType=INTEGER},
+      profession = #{profession,jdbcType=VARCHAR},
+      created_at = #{createdAt,jdbcType=TIMESTAMP},
+      updated_at = #{updatedAt,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
