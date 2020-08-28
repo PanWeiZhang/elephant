@@ -1,7 +1,9 @@
 package com.youmias.elephant.controller;
 
+import com.youmias.elephant.po.City;
 import com.youmias.elephant.po.IndustryFirst;
 import com.youmias.elephant.po.IndustryTwo;
+import com.youmias.elephant.po.Province;
 import com.youmias.elephant.service.InfomationService;
 import org.apache.juli.logging.Log;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,10 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
+
 
 @Controller
 @RequestMapping("/info")
@@ -24,19 +24,35 @@ public class InfomationController{
 	@Qualifier("infomationService")
 	private InfomationService infomationService;
 
+
+	/*
+	 *
+	 *@Author zpw
+	 *@Time 2020-08-28
+	 *@Params '',pid,cid
+	 *@Describe 获取级联地区（3级-省市县）
+	 *
+	 */
+
 	@ResponseBody
-	@RequestMapping(value = "/industry",method = {RequestMethod.GET})
-	public List<IndustryTwo> getAllIndustry(){
-		Integer p = 8;
-		List<IndustryTwo> s = infomationService.industryAllData(p);
-		return s;
+	@RequestMapping(value = "/provinces",method = {RequestMethod.GET})
+	public List<Province> getProvinces(){
+		List<Province> provinceList = infomationService.getProvinces();
+		return provinceList;
 	}
 
 	@ResponseBody
-	@RequestMapping(value = "/industryu",method = {RequestMethod.GET})
-	public List<IndustryFirst> getAllIndustrys(){
-		List<IndustryFirst> y = infomationService.industryAllDataaaa();
-		return y;
+	@RequestMapping(value = "/citys",method = {RequestMethod.GET})
+	public Province getCitys(Integer pid){
+		Province cityList = infomationService.getCitys(pid);
+		return cityList;
+	}
+
+	@ResponseBody
+	@RequestMapping(value = "/countys",method = {RequestMethod.GET})
+	public City getCountys(Integer cid){
+		City countyList = infomationService.getCountys(cid);
+		return countyList;
 	}
 
 }

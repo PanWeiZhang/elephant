@@ -1,5 +1,7 @@
 package com.youmias.elephant.po;
 
+import java.util.List;
+
 public class City {
     private Integer id;
 
@@ -8,6 +10,16 @@ public class City {
     private String name;
 
     private Integer provinceId;
+
+    private List<County> countys;
+
+    public List<County> getCountys() {
+        return countys;
+    }
+
+    public void setCountys(List<County> countys) {
+        this.countys = countys;
+    }
 
     public Integer getId() {
         return id;

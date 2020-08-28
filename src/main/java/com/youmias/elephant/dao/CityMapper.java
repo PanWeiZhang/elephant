@@ -1,8 +1,11 @@
 package com.youmias.elephant.dao;
 
 import com.youmias.elephant.po.City;
+import org.apache.ibatis.annotations.Mapper;
 
+@Mapper
 public interface CityMapper {
+
     int deleteByPrimaryKey(Integer id);
 
     int insert(City record);
@@ -14,4 +17,6 @@ public interface CityMapper {
     int updateByPrimaryKeySelective(City record);
 
     int updateByPrimaryKey(City record);
+
+    City getCountyList(Integer cid);
 }

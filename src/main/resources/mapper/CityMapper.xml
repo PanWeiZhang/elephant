@@ -1,15 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.youmias.elephant.dao.CityMapper">
+  <resultMap id="BaseResultCountyMap" type="com.youmias.elephant.po.County">
+    <id column="ccId" jdbcType="INTEGER" property="id" />
+    <result column="ccCode" jdbcType="INTEGER" property="code" />
+    <result column="ccName" jdbcType="VARCHAR" property="name" />
+    <result column="ccCid" jdbcType="INTEGER" property="cityId" />
+  </resultMap>
   <resultMap id="BaseResultMap" type="com.youmias.elephant.po.City">
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="code" jdbcType="INTEGER" property="code" />
-    <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="province_id" jdbcType="INTEGER" property="provinceId" />
+    <id column="cId" jdbcType="INTEGER" property="id" />
+    <result column="cCode" jdbcType="INTEGER" property="code" />
+    <result column="cName" jdbcType="VARCHAR" property="name" />
+    <result column="cPId" jdbcType="INTEGER" property="provinceId" />
+    <collection property="countys" javaType="List" ofType="com.youmias.elephant.po.County" autoMapping="true" resultMap="BaseResultCountyMap"></collection>
   </resultMap>
   <sql id="Base_Column_List">
     id, code, name, province_id
   </sql>
+  <select id="getCountyList" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    SELECT
+        c.id AS cId,
+        c.`name` AS cName,
+        c.code AS cCode,
+        c.province_id AS cPId,
+        cc.id AS ccId,
+        cc.`name` AS ccName,
+        cc.code AS ccCode,
+        cc.city_id AS ccCid
+        from city c
+     LEFT JOIN county cc ON c.id = cc.city_id
+     WHERE c.id = #{cid,jdbcType=INTEGER};
+  </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
