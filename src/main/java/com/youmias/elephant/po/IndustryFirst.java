@@ -1,12 +1,18 @@
 package com.youmias.elephant.po;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
-public class IndustryFirst {
+public class IndustryFirst implements Serializable {
+
     private Integer id;
 
-    private String name;
+    @Column(name = "name")
+    private String t_name;
 
     private String code;
 
@@ -14,7 +20,15 @@ public class IndustryFirst {
 
     private Date updatedAt;
 
-    private List<IndustryTwo> secInd;
+    private List<IndustryTwo> industryTwos;
+
+    public List<IndustryTwo> getIndustryTwos() {
+        return industryTwos;
+    }
+
+    public void setIndustryTwos(List<IndustryTwo> industryTwos) {
+        industryTwos = industryTwos;
+    }
 
     public Integer getId() {
         return id;
@@ -25,11 +39,11 @@ public class IndustryFirst {
     }
 
     public String getName() {
-        return name;
+        return t_name;
     }
 
     public void setName(String name) {
-        this.name = name == null ? null : name.trim();
+        this.t_name = name == null ? null : name.trim();
     }
 
     public String getCode() {
@@ -56,7 +70,4 @@ public class IndustryFirst {
         this.updatedAt = updatedAt;
     }
 
-    public List<IndustryTwo> getSecInd() {return secInd;}
-
-    public void setSecInd(List<IndustryTwo> secInd) {this.secInd = secInd;}
 }

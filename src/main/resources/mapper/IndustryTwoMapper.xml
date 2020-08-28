@@ -8,6 +8,9 @@
     <result column="code" jdbcType="VARCHAR" property="code" />
     <result column="created_at" jdbcType="TIMESTAMP" property="createdAt" />
     <result column="updated_at" jdbcType="TIMESTAMP" property="updatedAt" />
+    <association property="industryFirst" javaType="com.youmias.elephant.po.IndustryFirst">
+      <id column="t_name" property="t_name" />
+    </association>
   </resultMap>
   <sql id="Base_Column_List">
     id, industry_first_id, name, code, created_at, updated_at
@@ -17,6 +20,10 @@
     <include refid="Base_Column_List" />
     from industry_two
     where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="cumtorKey" resultMap="BaseResultMap">
+--     select a.id,a.`name`,a.`code`,b.id AS t_id,b.`code` AS t_code,b.`name` AS t_name from industry_two a join industry_first b ON a.industry_first_id = b.id;
+    select * from industry_two a join industry_first b ON b.id = #{id,jdbcType=INTEGER} AND a.industry_first_id = #{id,jdbcType=INTEGER};
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from industry_two

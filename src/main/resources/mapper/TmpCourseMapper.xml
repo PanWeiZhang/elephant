@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.youmias.elephant.dao.TmpCourseMapper">
+  <resultMap id="BaseResultScoreMap" type="com.youmias.elephant.po.TmpScore">
+    <id column="c_id" property="cId"/>
+    <id column="s_id" property="sId"/>
+    <id column="s_score" property="sScore"/>
+  </resultMap>
+  <resultMap id="BaseResultStudentMap" type="com.youmias.elephant.po.TmpStudent">
+    <id column="s_id" jdbcType="VARCHAR" property="sId" />
+    <result column="s_name" jdbcType="VARCHAR" property="sName" />
+    <result column="s_birth" jdbcType="VARCHAR" property="sBirth" />
+    <result column="s_sex" jdbcType="VARCHAR" property="sSex" />
+  </resultMap>
+  <resultMap id="BaseResultMap" type="com.youmias.elephant.po.TmpCourse">
+    <id column="c_id" jdbcType="VARCHAR" property="cId" />
+    <result column="c_name" jdbcType="VARCHAR" property="cName" />
+    <result column="t_id" jdbcType="VARCHAR" property="tId" />
+    <!--association:完成子对象的映射-->
+    <!--property:子对象在父对象中的属性名-->
+    <!--javaType:子对象的java类型-->
+    <!--autoMapping:完成子对象的自动映射，若开启驼峰，则按驼峰匹配-->
+    <association property="score" javaType="com.youmias.elephant.po.TmpScore" autoMapping="true" resultMap="BaseResultScoreMap"></association>
+    <association property="student" javaType="com.youmias.elephant.po.TmpStudent" autoMapping="true" resultMap="BaseResultStudentMap"></association>
+  </resultMap>
+  <sql id="Base_Column_List">
+    c_id, c_name, t_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from tmp_course
+    where c_id = #{cId,jdbcType=VARCHAR}
+  </select>
+  <select id="selectCourse" parameterType="java.lang.String" resultMap="BaseResultMap">
+    SELECT * from tmp_student stu
+	LEFT JOIN tmp_score sco ON stu.s_id = sco.s_id
+	LEFT JOIN tmp_course cou ON cou.c_id = sco.c_id
+	WHERE stu.s_id = "01" AND sco.c_id = '01';
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from tmp_course
+    where c_id = #{cId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.youmias.elephant.po.TmpCourse">
+    insert into tmp_course (c_id, c_name, t_id
+      )
+    values (#{cId,jdbcType=VARCHAR}, #{cName,jdbcType=VARCHAR}, #{tId,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.youmias.elephant.po.TmpCourse">
+    insert into tmp_course
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="cId != null">
+        c_id,
+      </if>
+      <if test="cName != null">
+        c_name,
+      </if>
+      <if test="tId != null">
+        t_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="cId != null">
+        #{cId,jdbcType=VARCHAR},
+      </if>
+      <if test="cName != null">
+        #{cName,jdbcType=VARCHAR},
+      </if>
+      <if test="tId != null">
+        #{tId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.youmias.elephant.po.TmpCourse">
+    update tmp_course
+    <set>
+      <if test="cName != null">
+        c_name = #{cName,jdbcType=VARCHAR},
+      </if>
+      <if test="tId != null">
+        t_id = #{tId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where c_id = #{cId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.youmias.elephant.po.TmpCourse">
+    update tmp_course
+    set c_name = #{cName,jdbcType=VARCHAR},
+      t_id = #{tId,jdbcType=VARCHAR}
+    where c_id = #{cId,jdbcType=VARCHAR}
+  </update>
+</mapper>

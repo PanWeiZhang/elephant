@@ -3,11 +3,12 @@ package com.youmias.elephant.service;
 import com.youmias.elephant.dao.*;
 import com.youmias.elephant.po.IndustryFirst;
 import com.youmias.elephant.po.IndustryTwo;
+import com.youmias.elephant.po.TmpCourse;
+import com.youmias.elephant.po.TmpStudent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -15,7 +16,15 @@ import java.util.List;
 public class InfomationService {
 
 	@Autowired
+	private IndustryTwoMapper industryTwoMapper;
+	@Autowired
 	private IndustryFirstMapper industryFirstMapper;
+	@Autowired
+	private TmpStudentMapper tmpStudentMapper;
+	@Autowired
+	private TmpCourseMapper tmpCourseMapper;
+
+
 
 	/*
 	*
@@ -26,7 +35,23 @@ public class InfomationService {
 	*
 	*/
 
-	public List<IndustryFirst> industryAllData(){
-		return industryFirstMapper.queryInAll();
+	public List<IndustryTwo> industryAllData(Integer ai){
+		List<IndustryTwo> lp = industryTwoMapper.cumtorKey(ai);
+		return lp;
 	}
+
+	public List<IndustryFirst> industryAllDataaaa(){
+
+		List<IndustryFirst> po = industryFirstMapper.onetomore();
+		return po;
+	}
+
+	public TmpStudent getSyncService(){
+		return tmpStudentMapper.getSyStudent();
+	}
+
+	public TmpCourse getSyncService2(){
+		return tmpCourseMapper.selectCourse();
+	}
+
 }

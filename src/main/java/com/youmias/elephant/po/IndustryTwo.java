@@ -2,11 +2,14 @@ package com.youmias.elephant.po;
 
 import org.springframework.stereotype.Component;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import java.io.Serializable;
 import java.util.Date;
 
+public class IndustryTwo  implements Serializable {
 
-@Component
-public class IndustryTwo {
     private Integer id;
 
     private Integer industryFirstId;
@@ -19,20 +22,22 @@ public class IndustryTwo {
 
     private Date updatedAt;
 
+    private IndustryFirst industryFirst;
+
+    public IndustryFirst getIndustryFirst() {
+        return industryFirst;
+    }
+
+    public void setIndustryFirst(IndustryFirst industryFirst) {
+        this.industryFirst = industryFirst;
+    }
+
     public Integer getId() {
         return id;
     }
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public Integer getIndustryFirstId() {
-        return industryFirstId;
-    }
-
-    public void setIndustryFirstId(Integer industryFirstId) {
-        this.industryFirstId = industryFirstId;
     }
 
     public String getName() {
