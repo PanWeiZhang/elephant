@@ -5,18 +5,20 @@
     <id column="cId" jdbcType="INTEGER" property="id" />
     <result column="cCode" jdbcType="INTEGER" property="code" />
     <result column="cName" jdbcType="VARCHAR" property="name" />
-    <result column="cPid" jdbcType="INTEGER" property="provinceId" />
+    <result column="cPid" jdbcType="INTEGER" property="parentId" />
   </resultMap>
   <resultMap id="BaseResultMap" type="com.youmias.elephant.po.Province">
     <id column="pId" jdbcType="INTEGER" property="id" />
     <result column="pCode" jdbcType="INTEGER" property="code" />
     <result column="pName" jdbcType="VARCHAR" property="name" />
+    <result column="pPid" jdbcType="INTEGER" property="parentId" />
     <collection property="citys" javaType="List" ofType="com.youmias.elephant.po.City" autoMapping="true" resultMap="BaseResultCityMap"></collection>
   </resultMap>
   <resultMap id="BaseResultNativeMap" type="com.youmias.elephant.po.Province">
     <id column="pnId" jdbcType="INTEGER" property="id" />
     <result column="pnCode" jdbcType="INTEGER" property="code" />
     <result column="pnName" jdbcType="VARCHAR" property="name" />
+    <result column="pnPid" jdbcType="INTEGER" property="parentId" />
   </resultMap>
   <sql id="Base_Column_List">
     id, code, name
@@ -31,7 +33,8 @@
     select
     a.code AS pnCode,
     a.name AS pnName,
-    a.id AS pnId
+    a.id AS pnId,
+    a.parent_id AS pnPid
     from province a
   </select>
   <select id="getCityList" parameterType="java.lang.Integer" resultMap="BaseResultMap">
@@ -39,12 +42,13 @@
         p.id AS pId,
         p.`name` AS pName,
         p.code AS pCode,
+        p.parent_id AS pPid,
         c.id AS cId,
         c.`name` AS cName,
         c.code AS cCode,
-        c.province_id AS cPid
+        c.parent_id AS cPid
         from province p
-     LEFT JOIN city c ON p.id = c.province_id
+     LEFT JOIN city c ON p.id = c.parent_id
      WHERE p.id = #{pid,jdbcType=INTEGER};
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">

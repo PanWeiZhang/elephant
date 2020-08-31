@@ -7,7 +7,7 @@ public class County {
 
     private String name;
 
-    private Integer cityId;
+    private Integer parentId;
 
     public Integer getId() {
         return id;
@@ -33,11 +33,11 @@ public class County {
         this.name = name == null ? null : name.trim();
     }
 
-    public Integer getCityId() {
-        return cityId;
+    public Integer getParentId() {
+        return parentId;
     }
 
-    public void setCityId(Integer cityId) {
-        this.cityId = cityId;
+    public void setParentId(Integer parentId) {
+        this.parentId = parentId;
     }
 }

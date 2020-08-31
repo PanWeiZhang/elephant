@@ -8,8 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
-@Component("infomationService")
+@Service("infomationService")
 public class InfomationService {
 
 	@Autowired

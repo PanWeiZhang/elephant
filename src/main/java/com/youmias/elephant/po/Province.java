@@ -12,6 +12,8 @@ public class Province {
 
     private String name;
 
+    private Integer parentId;
+
     private List<City> citys;
 
     public List<City> getCitys() {
@@ -20,6 +22,14 @@ public class Province {
 
     public void setCitys(List<City> citys) {
         this.citys = citys;
+    }
+
+    public Integer getParentId() {
+        return parentId;
+    }
+
+    public void setParentId(Integer parentId) {
+        this.parentId = parentId;
     }
 
     public Integer getId() {

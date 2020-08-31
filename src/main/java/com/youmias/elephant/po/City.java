@@ -9,9 +9,17 @@ public class City {
 
     private String name;
 
-    private Integer provinceId;
+    private Integer parentId;
 
     private List<County> countys;
+
+    public Integer getParentId() {
+        return parentId;
+    }
+
+    public void setParentId(Integer parentId) {
+        this.parentId = parentId;
+    }
 
     public List<County> getCountys() {
         return countys;
@@ -45,11 +53,4 @@ public class City {
         this.name = name == null ? null : name.trim();
     }
 
-    public Integer getProvinceId() {
-        return provinceId;
-    }
-
-    public void setProvinceId(Integer provinceId) {
-        this.provinceId = provinceId;
-    }
 }

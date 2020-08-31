@@ -5,30 +5,30 @@
     <id column="ccId" jdbcType="INTEGER" property="id" />
     <result column="ccCode" jdbcType="INTEGER" property="code" />
     <result column="ccName" jdbcType="VARCHAR" property="name" />
-    <result column="ccCid" jdbcType="INTEGER" property="cityId" />
+    <result column="ccPid" jdbcType="INTEGER" property="parentId" />
   </resultMap>
   <resultMap id="BaseResultMap" type="com.youmias.elephant.po.City">
     <id column="cId" jdbcType="INTEGER" property="id" />
     <result column="cCode" jdbcType="INTEGER" property="code" />
     <result column="cName" jdbcType="VARCHAR" property="name" />
-    <result column="cPId" jdbcType="INTEGER" property="provinceId" />
+    <result column="cPid" jdbcType="INTEGER" property="parentId" />
     <collection property="countys" javaType="List" ofType="com.youmias.elephant.po.County" autoMapping="true" resultMap="BaseResultCountyMap"></collection>
   </resultMap>
   <sql id="Base_Column_List">
-    id, code, name, province_id
+    id, code, name, parent_id
   </sql>
   <select id="getCountyList" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     SELECT
         c.id AS cId,
         c.`name` AS cName,
         c.code AS cCode,
-        c.province_id AS cPId,
+        c.parent_id AS cPid,
         cc.id AS ccId,
         cc.`name` AS ccName,
         cc.code AS ccCode,
-        cc.city_id AS ccCid
+        cc.parent_id AS ccPid
         from city c
-     LEFT JOIN county cc ON c.id = cc.city_id
+     LEFT JOIN county cc ON c.id = cc.parent_id
      WHERE c.id = #{cid,jdbcType=INTEGER};
   </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
@@ -43,9 +43,9 @@
   </delete>
   <insert id="insert" parameterType="com.youmias.elephant.po.City">
     insert into city (id, code, name, 
-      province_id)
+      parent_id)
     values (#{id,jdbcType=INTEGER}, #{code,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, 
-      #{provinceId,jdbcType=INTEGER})
+      #{parentId,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.youmias.elephant.po.City">
     insert into city
@@ -59,8 +59,8 @@
       <if test="name != null">
         name,
       </if>
-      <if test="provinceId != null">
-        province_id,
+      <if test="parentId != null">
+        parent_id,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -73,8 +73,8 @@
       <if test="name != null">
         #{name,jdbcType=VARCHAR},
       </if>
-      <if test="provinceId != null">
-        #{provinceId,jdbcType=INTEGER},
+      <if test="parentId != null">
+        #{parentId,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -87,8 +87,8 @@
       <if test="name != null">
         name = #{name,jdbcType=VARCHAR},
       </if>
-      <if test="provinceId != null">
-        province_id = #{provinceId,jdbcType=INTEGER},
+      <if test="parentId != null">
+        parent_id = #{parentId,jdbcType=INTEGER},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
@@ -97,7 +97,7 @@
     update city
     set code = #{code,jdbcType=INTEGER},
       name = #{name,jdbcType=VARCHAR},
-      province_id = #{provinceId,jdbcType=INTEGER}
+      parent_id = #{parentId,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>
