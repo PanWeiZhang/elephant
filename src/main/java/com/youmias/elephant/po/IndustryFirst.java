@@ -11,8 +11,9 @@ public class IndustryFirst implements Serializable {
 
     private Integer id;
 
-    @Column(name = "name")
-    private String t_name;
+    private Integer parentId;
+
+    private String name;
 
     private String code;
 
@@ -21,6 +22,14 @@ public class IndustryFirst implements Serializable {
     private Date updatedAt;
 
     private List<IndustryTwo> industryTwos;
+
+    public Integer getParentId() {
+        return parentId;
+    }
+
+    public void setParentId(Integer parentId) {
+        this.parentId = parentId;
+    }
 
     public List<IndustryTwo> getIndustryTwos() {
         return industryTwos;
@@ -39,11 +48,11 @@ public class IndustryFirst implements Serializable {
     }
 
     public String getName() {
-        return t_name;
+        return name;
     }
 
     public void setName(String name) {
-        this.t_name = name == null ? null : name.trim();
+        this.name = name == null ? null : name.trim();
     }
 
     public String getCode() {

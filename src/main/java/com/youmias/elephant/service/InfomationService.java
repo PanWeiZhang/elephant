@@ -19,6 +19,12 @@ public class InfomationService {
 	private ProvinceMapper provinceMapper;
 	@Autowired
 	private CityMapper cityMapper;
+	@Autowired
+	private CountyMapper countyMapper;
+	@Autowired
+	private IndustryFirstMapper industryFirstMapper;
+	@Autowired
+	private IndustryTwoMapper industryTwoMapper;
 
 
 	/* 测试 */
@@ -49,6 +55,46 @@ public class InfomationService {
 
 	public City getCountys(Integer cid){
 		return cityMapper.getCountyList(cid);
+	}
+
+
+	/*
+	 *
+	 *@Author zpw
+	 *@Time 2020-09-01
+	 *@Params
+	 *@Describe 获取级联所有地区（3级-省市县）
+	 *
+	 */
+
+	public List<City> getAllCitys(){
+		return cityMapper.getAllCitys();
+	}
+
+	public List<County> getAllCountys(){
+		return countyMapper.getAllCountys();
+	}
+
+
+	/*
+	 *
+	 *@Author zpw
+	 *@Time 2020-09-01
+	 *@Params
+	 *@Describe 获取行业
+	 *
+	 */
+
+	public List<IndustryFirst> getFriIndustry(){
+		return industryFirstMapper.getAideIndustryList();
+	}
+
+	public List<IndustryFirst> getFriIndustryList(){
+		return industryFirstMapper.getFirList();
+	}
+
+	public List<IndustryTwo> getTwoIndustryList(){
+		return industryTwoMapper.getTwoIndustryList();
 	}
 
 }

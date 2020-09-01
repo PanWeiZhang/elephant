@@ -19,5 +19,5 @@ public interface IndustryTwoMapper{
 
     int updateByPrimaryKey(IndustryTwo record);
 
-    List<IndustryTwo> cumtorKey(Integer ai);
+    List<IndustryTwo> getTwoIndustryList();
 }

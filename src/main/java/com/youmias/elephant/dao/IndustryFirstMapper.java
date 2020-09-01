@@ -22,7 +22,9 @@ public interface IndustryFirstMapper {
 
     int updateByPrimaryKey(IndustryFirst record);
 
-    List<IndustryFirst> onetomore();
+    List<IndustryFirst> getAideIndustryList();
+
+    List<IndustryFirst> getFirList();
 
     //二级
 //    @Select("select a.id,a.`name`,a.`code`,b.id AS t_id,b.`code` AS t_code,b.`name` AS t_name from industry_two a join industry_first b ON a.industry_first_id = b.id")

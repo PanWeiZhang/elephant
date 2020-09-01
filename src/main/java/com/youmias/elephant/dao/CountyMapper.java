@@ -2,6 +2,8 @@ package com.youmias.elephant.dao;
 
 import com.youmias.elephant.po.County;
 
+import java.util.List;
+
 public interface CountyMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -14,4 +16,6 @@ public interface CountyMapper {
     int updateByPrimaryKeySelective(County record);
 
     int updateByPrimaryKey(County record);
+
+    List<County> getAllCountys();
 }

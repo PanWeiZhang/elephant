@@ -14,6 +14,12 @@
     <result column="cPid" jdbcType="INTEGER" property="parentId" />
     <collection property="countys" javaType="List" ofType="com.youmias.elephant.po.County" autoMapping="true" resultMap="BaseResultCountyMap"></collection>
   </resultMap>
+  <resultMap id="BaseNativeResultMap" type="com.youmias.elephant.po.City">
+    <id column="cId" jdbcType="INTEGER" property="id" />
+    <result column="cCode" jdbcType="INTEGER" property="code" />
+    <result column="cName" jdbcType="VARCHAR" property="name" />
+    <result column="cPid" jdbcType="INTEGER" property="parentId" />
+  </resultMap>
   <sql id="Base_Column_List">
     id, code, name, parent_id
   </sql>
@@ -30,6 +36,14 @@
         from city c
      LEFT JOIN county cc ON c.id = cc.parent_id
      WHERE c.id = #{cid,jdbcType=INTEGER};
+  </select>
+  <select id="getAllCitys" resultMap="BaseNativeResultMap">
+    select
+        c.id AS cId,
+        c.`name` AS cName,
+        c.code AS cCode,
+        c.parent_id AS cPid
+    from city c
   </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 

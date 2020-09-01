@@ -1,28 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.youmias.elephant.dao.IndustryFirstMapper">
-  <resultMap id="BaseResultMap" type="com.youmias.elephant.po.IndustryFirst">
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="code" jdbcType="VARCHAR" property="code" />
-    <result column="created_at" jdbcType="TIMESTAMP" property="createdAt" />
-    <result column="updated_at" jdbcType="TIMESTAMP" property="updatedAt" />
-    <collection property="industryTwos" ofType="com.youmias.elephant.po.IndustryTwo">
-      <result column="industry_first_id" jdbcType="INTEGER" property="industryFirstId" />
-    </collection>
+  <resultMap id="BaseResultTwoMap" type="com.youmias.elephant.po.IndustryTwo">
+      <result column="wName" jdbcType="VARCHAR" property="name" />
+      <result column="wCode" jdbcType="VARCHAR" property="code" />
+      <result column="wPid" jdbcType="INTEGER" property="parentId" />
+      <result column="wCreateTime" jdbcType="TIMESTAMP" property="createdAt" />
+      <result column="wUpdateTime" jdbcType="TIMESTAMP" property="updatedAt" />
   </resultMap>
-
+  <resultMap id="BaseResultMap" type="com.youmias.elephant.po.IndustryFirst">
+    <id column="fId" jdbcType="INTEGER" property="id" />
+    <result column="fName" jdbcType="VARCHAR" property="name" />
+    <result column="fCode" jdbcType="VARCHAR" property="code" />
+    <result column="fPid" jdbcType="VARCHAR" property="parentId" />
+    <result column="fCreateTime" jdbcType="TIMESTAMP" property="createdAt" />
+    <result column="fUpdateTime" jdbcType="TIMESTAMP" property="updatedAt" />
+    <collection property="industryTwos" javaType="List" ofType="com.youmias.elephant.po.IndustryTwo" autoMapping="true" resultMap="BaseResultTwoMap"></collection>
+  </resultMap>
+  <resultMap id="BaseResultNativeMap" type="com.youmias.elephant.po.IndustryFirst">
+    <id column="fId" jdbcType="INTEGER" property="id" />
+    <result column="fName" jdbcType="VARCHAR" property="name" />
+    <result column="fCode" jdbcType="VARCHAR" property="code" />
+    <result column="fPid" jdbcType="VARCHAR" property="parentId" />
+    <result column="fCreateTime" jdbcType="TIMESTAMP" property="createdAt" />
+    <result column="fUpdateTime" jdbcType="TIMESTAMP" property="updatedAt" />
+  </resultMap>
   <sql id="Base_Column_List">
     id, name, code, created_at, updated_at
   </sql>
-  <select id="onetomore" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select * from industry_first b join  industry_two a ON b.id = 3 AND a.industry_first_id = 3;
+  <select id="getAideIndustryList" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    SELECT
+      f.name AS fName,
+      f.code AS fCode,
+      f.id AS fId,
+      f.parent_id AS fPid,
+      f.created_at AS fCreateTime,
+      f.updated_at AS fUpdateTime,
+      w.name AS wName,
+      w.code AS wCode,
+      w.parent_id AS wPid,
+      w.created_at AS wCreateTime,
+      w.updated_at AS wUpdateTime
+    from industry_first f
+    LEFT JOIN industry_two w ON f.id = w.parent_id
+    where f.id = #{id,jdbcType=INTEGER};
   </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from industry_first
     where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="getFirList" resultMap="BaseResultNativeMap">
+    select
+      f.name AS fName,
+      f.code AS fCode,
+      f.id AS fId,
+      f.parent_id AS fPid,
+      f.created_at AS fCreateTime,
+      f.updated_at AS fUpdateTime
+    from industry_first f
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from industry_first

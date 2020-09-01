@@ -3,6 +3,8 @@ package com.youmias.elephant.dao;
 import com.youmias.elephant.po.City;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 @Mapper
 public interface CityMapper {
 
@@ -19,4 +21,6 @@ public interface CityMapper {
     int updateByPrimaryKey(City record);
 
     City getCountyList(Integer cid);
+
+    List<City> getAllCitys();
 }

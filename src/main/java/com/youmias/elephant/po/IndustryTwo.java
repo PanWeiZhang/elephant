@@ -12,7 +12,7 @@ public class IndustryTwo  implements Serializable {
 
     private Integer id;
 
-    private Integer industryFirstId;
+    private Integer parentId;
 
     private String name;
 
@@ -22,14 +22,12 @@ public class IndustryTwo  implements Serializable {
 
     private Date updatedAt;
 
-    private IndustryFirst industryFirst;
-
-    public IndustryFirst getIndustryFirst() {
-        return industryFirst;
+    public Integer getParentId() {
+        return parentId;
     }
 
-    public void setIndustryFirst(IndustryFirst industryFirst) {
-        this.industryFirst = industryFirst;
+    public void setParentId(Integer parentId) {
+        this.parentId = parentId;
     }
 
     public Integer getId() {
