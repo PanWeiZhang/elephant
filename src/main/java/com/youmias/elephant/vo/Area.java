@@ -7,6 +7,8 @@ public class Area{
 
 	private Integer id;
 
+	private Integer nativeId; //未处理数据前的id
+
 	private Integer value;
 
 	private String label;
@@ -14,6 +16,14 @@ public class Area{
 	private Integer parentId;
 
 	private List children;
+
+	public Integer getNativeId() {
+		return nativeId;
+	}
+
+	public void setNativeId(Integer nativeId) {
+		this.nativeId = nativeId;
+	}
 
 	public Integer getValue() {
 		return value;

@@ -24,7 +24,6 @@ public class TestController extends BaseController{
 	private static final Logger log = LoggerFactory.getLogger(TestController.class);
 
 	@Autowired
-	@Qualifier("infomationService")
 	private InfomationService infomationService;
 
 	@Autowired

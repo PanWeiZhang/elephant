@@ -22,7 +22,6 @@ import static com.youmias.elephant.utils.ListToTreeUtil.generateTree2;
 public class InfomationController extends BaseController{
 
 	@Autowired
-	@Qualifier("infomationService")
 	private InfomationService infomationService;
 
 
@@ -77,6 +76,7 @@ public class InfomationController extends BaseController{
 		for(Province item : provinceList){
 			Area temp = new Area();
 			temp.setId(count);
+			temp.setNativeId(item.getId());
 			temp.setLabel(item.getName());
 			temp.setValue(item.getCode());
 			temp.setParentId(item.getParentId());
@@ -87,6 +87,7 @@ public class InfomationController extends BaseController{
 		for(City item : cityList){
 			Area temp = new Area();
 			temp.setId(count);
+			temp.setNativeId(item.getId());
 			temp.setLabel(item.getName());
 			temp.setValue(item.getCode());
 			temp.setParentId(item.getParentId());
@@ -97,6 +98,7 @@ public class InfomationController extends BaseController{
 		for(County item : countyList){
 			Area temp = new Area();
 			temp.setId(count);
+			temp.setNativeId(item.getId());
 			temp.setLabel(item.getName());
 			temp.setValue(item.getCode());
 			temp.setParentId(item.getParentId());
@@ -133,6 +135,7 @@ public class InfomationController extends BaseController{
 		for(IndustryFirst item : ifList){
 			Industry temp = new Industry();
 			temp.setId(count);
+			temp.setNativeId(item.getId());
 			temp.setLabel(item.getName());
 			temp.setValue(item.getCode());
 			temp.setParentId(item.getParentId());
@@ -145,6 +148,7 @@ public class InfomationController extends BaseController{
 		for(IndustryTwo item : itList){
 			Industry temp = new Industry();
 			temp.setId(count);
+			temp.setNativeId(item.getId());
 			temp.setLabel(item.getName());
 			temp.setValue(item.getCode());
 			temp.setParentId(item.getParentId());

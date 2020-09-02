@@ -26,6 +26,14 @@
   <sql id="Blob_Column_List">
     avatar
   </sql>
+  <select id="selectOnlyUser" parameterType="java.lang.String" resultMap="ResultMapWithBLOBs">
+    select
+      <include refid="Base_Column_List" />
+      ,
+      <include refid="Blob_Column_List" />
+    from user
+    where mobile = #{mobile,jdbcType=VARCHAR}
+  </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
     select 
     <include refid="Base_Column_List" />
@@ -38,7 +46,7 @@
     delete from user
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.youmias.elephant.po.User">
+  <insert id="insert" parameterType="com.youmias.elephant.po.User" useGeneratedKeys="true" keyProperty="id">
     insert into user (id, name, nickname, 
       password, mobile, county_id, 
       city_id, province_id, industry_two_id, 

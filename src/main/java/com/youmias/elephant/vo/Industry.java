@@ -1,7 +1,5 @@
 package com.youmias.elephant.vo;
 
-import com.youmias.elephant.po.IndustryTwo;
-
 import java.util.Date;
 import java.util.List;
 
@@ -10,6 +8,8 @@ public class Industry{
 	private Integer id;
 
 	private Integer parentId;
+
+	private Integer nativeId; //未处理数据前的id
 
 	private String label;
 
@@ -20,6 +20,14 @@ public class Industry{
 	private Date createdAt;
 
 	private Date updatedAt;
+
+	public Integer getNativeId() {
+		return nativeId;
+	}
+
+	public void setNativeId(Integer nativeId) {
+		this.nativeId = nativeId;
+	}
 
 	public List getChildren() {
 		return children;
