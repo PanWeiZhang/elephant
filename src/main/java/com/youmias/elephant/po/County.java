@@ -1,19 +1,19 @@
 package com.youmias.elephant.po;
 
 public class County {
-    private Integer id;
+    private String id;
 
     private Integer code;
 
     private String name;
 
-    private Integer parentId;
+    private String parentId;
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -33,11 +33,11 @@ public class County {
         this.name = name == null ? null : name.trim();
     }
 
-    public Integer getParentId() {
+    public String getParentId() {
         return parentId;
     }
 
-    public void setParentId(Integer parentId) {
+    public void setParentId(String parentId) {
         this.parentId = parentId;
     }
 }

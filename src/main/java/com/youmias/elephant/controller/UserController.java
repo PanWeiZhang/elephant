@@ -41,7 +41,9 @@ public class UserController extends BaseController{
 	@Transactional(propagation = Propagation.REQUIRED, rollbackFor = {Exception.class})
 	@PostMapping("/regiter")
 	public Map<String, String> regiterUser(@RequestBody User user){
+		System.out.println("111111111111111111111111");
 		try{
+			System.out.println("222222222222222222222222222222");
 			Map<String,String> map = new HashMap<>();
 			String uMobile = user.getMobile();
 			User isUser = userService.isHashUser(uMobile);
@@ -68,6 +70,7 @@ public class UserController extends BaseController{
 			}
 			return  map;
 		}catch (RuntimeException e){
+			System.out.println("3333333333333333333333333");
 			throw new RuntimeException(e);
 		}
 	}

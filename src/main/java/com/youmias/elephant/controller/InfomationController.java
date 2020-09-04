@@ -41,13 +41,13 @@ public class InfomationController extends BaseController{
 	}
 
 	@RequestMapping(value = "/citys",method = {RequestMethod.GET})
-	public Province getCitys(Integer pid){
+	public Province getCitys(String pid){
 		Province cityList = infomationService.getCitys(pid);
 		return cityList;
 	}
 
 	@RequestMapping(value = "/countys",method = {RequestMethod.GET})
-	public City getCountys(Integer cid){
+	public City getCountys(String cid){
 		City countyList = infomationService.getCountys(cid);
 		return countyList;
 	}
@@ -71,39 +71,35 @@ public class InfomationController extends BaseController{
 		List<City> cityList = infomationService.getAllCitys();
 		List<County> countyList = infomationService.getAllCountys();
 
-		int count = 1;
 
 		for(Province item : provinceList){
 			Area temp = new Area();
-			temp.setId(count);
+			temp.setId(item.getId());
 			temp.setNativeId(item.getId());
 			temp.setLabel(item.getName());
 			temp.setValue(item.getCode());
 			temp.setParentId(item.getParentId());
 			eVoList.add(temp);
-			count++;
 		}
 
 		for(City item : cityList){
 			Area temp = new Area();
-			temp.setId(count);
+			temp.setId(item.getId());
 			temp.setNativeId(item.getId());
 			temp.setLabel(item.getName());
 			temp.setValue(item.getCode());
 			temp.setParentId(item.getParentId());
 			eVoList.add(temp);
-			count++;
 		}
 
 		for(County item : countyList){
 			Area temp = new Area();
-			temp.setId(count);
+			temp.setId(item.getId());
 			temp.setNativeId(item.getId());
 			temp.setLabel(item.getName());
 			temp.setValue(item.getCode());
 			temp.setParentId(item.getParentId());
 			eVoList.add(temp);
-			count++;
 		}
 
 		List treeData = generateTree(eVoList);

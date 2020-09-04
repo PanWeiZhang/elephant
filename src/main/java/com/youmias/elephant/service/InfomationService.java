@@ -17,13 +17,13 @@ public interface InfomationService {
 	 * @param pid
 	 * @return
 	 */
-	Province getCitys(Integer pid);
+	Province getCitys(String pid);
 
 	/***
 	 * @param cid
 	 * @return
 	 */
-	City getCountys(Integer cid);
+	City getCountys(String cid);
 
 	List<City> getAllCitys();
 

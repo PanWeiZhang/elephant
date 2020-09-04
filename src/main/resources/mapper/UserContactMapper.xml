@@ -39,7 +39,7 @@
       address, profession, mobile, 
       email, created_at, updated_at
       )
-    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR},
       #{nickname,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR}, #{birthday,jdbcType=DATE}, 
       #{idType,jdbcType=VARCHAR}, #{idNo,jdbcType=VARCHAR}, #{education,jdbcType=INTEGER}, 
       #{address,jdbcType=VARCHAR}, #{profession,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}, 

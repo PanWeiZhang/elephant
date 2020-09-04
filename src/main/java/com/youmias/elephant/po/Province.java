@@ -6,13 +6,13 @@ import java.util.List;
 
 @Component
 public class Province {
-    private Integer id;
+    private String id;
 
     private Integer code;
 
     private String name;
 
-    private Integer parentId;
+    private String parentId;
 
     private List<City> citys;
 
@@ -24,19 +24,19 @@ public class Province {
         this.citys = citys;
     }
 
-    public Integer getParentId() {
+    public String getParentId() {
         return parentId;
     }
 
-    public void setParentId(Integer parentId) {
+    public void setParentId(String parentId) {
         this.parentId = parentId;
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 

@@ -5,23 +5,23 @@ import java.util.List;
 
 public class Area{
 
-	private Integer id;
+	private String id;
 
-	private Integer nativeId; //未处理数据前的id
+	private String nativeId; //未处理数据前的id
 
 	private Integer value;
 
 	private String label;
 
-	private Integer parentId;
+	private String parentId;
 
 	private List children;
 
-	public Integer getNativeId() {
+	public String getNativeId() {
 		return nativeId;
 	}
 
-	public void setNativeId(Integer nativeId) {
+	public void setNativeId(String nativeId) {
 		this.nativeId = nativeId;
 	}
 
@@ -49,20 +49,20 @@ public class Area{
 		this.children = children;
 	}
 
-	public Integer getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
 
-	public Integer getParentId() {
+	public String getParentId() {
 		return parentId;
 	}
 
-	public void setParentId(Integer parentId) {
+	public void setParentId(String parentId) {
 		this.parentId = parentId;
 	}
 

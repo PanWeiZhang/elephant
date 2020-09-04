@@ -2,32 +2,32 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.youmias.elephant.dao.ProvinceMapper">
   <resultMap id="BaseResultCityMap" type="com.youmias.elephant.po.City">
-    <id column="cId" jdbcType="INTEGER" property="id" />
+    <id column="cId" jdbcType="VARCHAR" property="id" />
     <result column="cCode" jdbcType="INTEGER" property="code" />
     <result column="cName" jdbcType="VARCHAR" property="name" />
-    <result column="cPid" jdbcType="INTEGER" property="parentId" />
+    <result column="cPid" jdbcType="VARCHAR" property="parentId" />
   </resultMap>
   <resultMap id="BaseResultMap" type="com.youmias.elephant.po.Province">
-    <id column="pId" jdbcType="INTEGER" property="id" />
+    <id column="pId" jdbcType="VARCHAR" property="id" />
     <result column="pCode" jdbcType="INTEGER" property="code" />
     <result column="pName" jdbcType="VARCHAR" property="name" />
-    <result column="pPid" jdbcType="INTEGER" property="parentId" />
+    <result column="pPid" jdbcType="VARCHAR" property="parentId" />
     <collection property="citys" javaType="List" ofType="com.youmias.elephant.po.City" autoMapping="true" resultMap="BaseResultCityMap"></collection>
   </resultMap>
   <resultMap id="BaseResultNativeMap" type="com.youmias.elephant.po.Province">
-    <id column="pnId" jdbcType="INTEGER" property="id" />
+    <id column="pnId" jdbcType="VARCHAR" property="id" />
     <result column="pnCode" jdbcType="INTEGER" property="code" />
     <result column="pnName" jdbcType="VARCHAR" property="name" />
-    <result column="pnPid" jdbcType="INTEGER" property="parentId" />
+    <result column="pnPid" jdbcType="VARCHAR" property="parentId" />
   </resultMap>
   <sql id="Base_Column_List">
     id, code, name
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from province
-    where id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=VARCHAR}
   </select>
   <select id="getProvinceList" resultMap="BaseResultNativeMap">
     select
@@ -37,7 +37,7 @@
     a.parent_id AS pnPid
     from province a
   </select>
-  <select id="getCityList" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  <select id="getCityList" parameterType="java.lang.String" resultMap="BaseResultMap">
     SELECT
         p.id AS pId,
         p.`name` AS pName,
@@ -49,16 +49,16 @@
         c.parent_id AS cPid
         from province p
      LEFT JOIN city c ON p.id = c.parent_id
-     WHERE p.id = #{pid,jdbcType=INTEGER};
+     WHERE p.id = #{pid,jdbcType=VARCHAR};
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from province
-    where id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="com.youmias.elephant.po.Province">
     insert into province (id, code, name
       )
-    values (#{id,jdbcType=INTEGER}, #{code,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}
+    values (#{id,jdbcType=VARCHAR}, #{code,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.youmias.elephant.po.Province">
@@ -76,7 +76,7 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
-        #{id,jdbcType=INTEGER},
+        #{id,jdbcType=VARCHAR},
       </if>
       <if test="code != null">
         #{code,jdbcType=INTEGER},
@@ -96,12 +96,12 @@
         name = #{name,jdbcType=VARCHAR},
       </if>
     </set>
-    where id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=VARCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.youmias.elephant.po.Province">
     update province
     set code = #{code,jdbcType=INTEGER},
       name = #{name,jdbcType=VARCHAR}
-    where id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=VARCHAR}
   </update>
 </mapper>

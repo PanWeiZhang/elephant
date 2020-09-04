@@ -51,11 +51,11 @@ public class InfomationServiceImpl implements InfomationService {
 		return provinceMapper.getProvinceList();
 	}
 	@Override
-	public Province getCitys(Integer pid){
+	public Province getCitys(String pid){
 		return provinceMapper.getCityList(pid);
 	}
 	@Override
-	public City getCountys(Integer cid){
+	public City getCountys(String cid){
 		return cityMapper.getCountyList(cid);
 	}
 

@@ -13,11 +13,11 @@ public class User {
 
     private String mobile;
 
-    private Integer countyId;
+    private String countyId;
 
-    private Integer cityId;
+    private String cityId;
 
-    private Integer provinceId;
+    private String provinceId;
 
     private Integer industryTwoId;
 
@@ -71,27 +71,27 @@ public class User {
         this.mobile = mobile == null ? null : mobile.trim();
     }
 
-    public Integer getCountyId() {
+    public String getCountyId() {
         return countyId;
     }
 
-    public void setCountyId(Integer countyId) {
+    public void setCountyId(String countyId) {
         this.countyId = countyId;
     }
 
-    public Integer getCityId() {
+    public String getCityId() {
         return cityId;
     }
 
-    public void setCityId(Integer cityId) {
+    public void setCityId(String cityId) {
         this.cityId = cityId;
     }
 
-    public Integer getProvinceId() {
+    public String getProvinceId() {
         return provinceId;
     }
 
-    public void setProvinceId(Integer provinceId) {
+    public void setProvinceId(String provinceId) {
         this.provinceId = provinceId;
     }
 

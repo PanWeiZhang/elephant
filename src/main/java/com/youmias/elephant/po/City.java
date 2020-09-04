@@ -3,21 +3,21 @@ package com.youmias.elephant.po;
 import java.util.List;
 
 public class City {
-    private Integer id;
+    private String id;
 
     private Integer code;
 
     private String name;
 
-    private Integer parentId;
+    private String parentId;
 
     private List<County> countys;
 
-    public Integer getParentId() {
+    public String getParentId() {
         return parentId;
     }
 
-    public void setParentId(Integer parentId) {
+    public void setParentId(String parentId) {
         this.parentId = parentId;
     }
 
@@ -29,11 +29,11 @@ public class City {
         this.countys = countys;
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 

@@ -7,9 +7,9 @@
     <result column="nickname" jdbcType="VARCHAR" property="nickname" />
     <result column="password" jdbcType="VARCHAR" property="password" />
     <result column="mobile" jdbcType="VARCHAR" property="mobile" />
-    <result column="county_id" jdbcType="INTEGER" property="countyId" />
-    <result column="city_id" jdbcType="INTEGER" property="cityId" />
-    <result column="province_id" jdbcType="INTEGER" property="provinceId" />
+    <result column="county_id" jdbcType="VARCHAR" property="countyId" />
+    <result column="city_id" jdbcType="VARCHAR" property="cityId" />
+    <result column="province_id" jdbcType="VARCHAR" property="provinceId" />
     <result column="industry_two_id" jdbcType="INTEGER" property="industryTwoId" />
     <result column="industry_first_id" jdbcType="INTEGER" property="industryFirstId" />
     <result column="profession" jdbcType="VARCHAR" property="profession" />
@@ -48,14 +48,14 @@
   </delete>
   <insert id="insert" parameterType="com.youmias.elephant.po.User" useGeneratedKeys="true" keyProperty="id">
     insert into user (id, name, nickname, 
-      password, mobile, county_id, 
-      city_id, province_id, industry_two_id, 
+      password, mobile, county_id,
+      city_id, province_id, industry_two_id,
       industry_first_id, profession, created_at, 
       updated_at, avatar)
-    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{nickname,jdbcType=VARCHAR}, 
-      #{password,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}, #{countyId,jdbcType=INTEGER}, 
-      #{cityId,jdbcType=INTEGER}, #{provinceId,jdbcType=INTEGER}, #{industryTwoId,jdbcType=INTEGER}, 
-      #{industryFirstId,jdbcType=INTEGER}, #{profession,jdbcType=VARCHAR}, #{createdAt,jdbcType=TIMESTAMP}, 
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{nickname,jdbcType=VARCHAR},
+      #{password,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}, #{countyId,jdbcType=VARCHAR},
+      #{cityId,jdbcType=VARCHAR}, #{provinceId,jdbcType=VARCHAR}, #{industryTwoId,jdbcType=INTEGER},
+      #{industryFirstId,jdbcType=INTEGER}, #{profession,jdbcType=VARCHAR}, #{createdAt,jdbcType=TIMESTAMP},
       #{updatedAt,jdbcType=TIMESTAMP}, #{avatar,jdbcType=LONGVARBINARY})
   </insert>
   <insert id="insertSelective" parameterType="com.youmias.elephant.po.User">
@@ -121,13 +121,13 @@
         #{mobile,jdbcType=VARCHAR},
       </if>
       <if test="countyId != null">
-        #{countyId,jdbcType=INTEGER},
+        #{countyId,jdbcType=VARCHAR},
       </if>
       <if test="cityId != null">
-        #{cityId,jdbcType=INTEGER},
+        #{cityId,jdbcType=VARCHAR},
       </if>
       <if test="provinceId != null">
-        #{provinceId,jdbcType=INTEGER},
+        #{provinceId,jdbcType=VARCHAR},
       </if>
       <if test="industryTwoId != null">
         #{industryTwoId,jdbcType=INTEGER},
@@ -165,13 +165,13 @@
         mobile = #{mobile,jdbcType=VARCHAR},
       </if>
       <if test="countyId != null">
-        county_id = #{countyId,jdbcType=INTEGER},
+        county_id = #{countyId,jdbcType=VARCHAR},
       </if>
       <if test="cityId != null">
-        city_id = #{cityId,jdbcType=INTEGER},
+        city_id = #{cityId,jdbcType=VARCHAR},
       </if>
       <if test="provinceId != null">
-        province_id = #{provinceId,jdbcType=INTEGER},
+        province_id = #{provinceId,jdbcType=VARCHAR},
       </if>
       <if test="industryTwoId != null">
         industry_two_id = #{industryTwoId,jdbcType=INTEGER},
@@ -200,9 +200,9 @@
       nickname = #{nickname,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
       mobile = #{mobile,jdbcType=VARCHAR},
-      county_id = #{countyId,jdbcType=INTEGER},
-      city_id = #{cityId,jdbcType=INTEGER},
-      province_id = #{provinceId,jdbcType=INTEGER},
+      county_id = #{countyId,jdbcType=VARCHAR},
+      city_id = #{cityId,jdbcType=VARCHAR},
+      province_id = #{provinceId,jdbcType=VARCHAR},
       industry_two_id = #{industryTwoId,jdbcType=INTEGER},
       industry_first_id = #{industryFirstId,jdbcType=INTEGER},
       profession = #{profession,jdbcType=VARCHAR},
@@ -217,9 +217,9 @@
       nickname = #{nickname,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
       mobile = #{mobile,jdbcType=VARCHAR},
-      county_id = #{countyId,jdbcType=INTEGER},
-      city_id = #{cityId,jdbcType=INTEGER},
-      province_id = #{provinceId,jdbcType=INTEGER},
+      county_id = #{countyId,jdbcType=VARCHAR},
+      city_id = #{cityId,jdbcType=VARCHAR},
+      province_id = #{provinceId,jdbcType=VARCHAR},
       industry_two_id = #{industryTwoId,jdbcType=INTEGER},
       industry_first_id = #{industryFirstId,jdbcType=INTEGER},
       profession = #{profession,jdbcType=VARCHAR},
