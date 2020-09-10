@@ -110,21 +110,37 @@
 <!--               enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
 <!--               enableUpdateByExample="false" selectByExampleQueryId="false">-->
 <!--        </table>-->
-        <table schema="elephant" tableName="tmp_student" domainObjectName="TmpStudent"
-               enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
-               enableUpdateByExample="false" selectByExampleQueryId="false">
-        </table>
-        <table schema="elephant" tableName="tmp_course" domainObjectName="TmpCourse"
-               enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
-               enableUpdateByExample="false" selectByExampleQueryId="false">
-        </table>
-        <table schema="elephant" tableName="tmp_teacher" domainObjectName="TmpTeacher"
-               enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
-               enableUpdateByExample="false" selectByExampleQueryId="false">
-        </table>
-        <table schema="elephant" tableName="tmp_score" domainObjectName="TmpScore"
-               enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
-               enableUpdateByExample="false" selectByExampleQueryId="false">
-        </table>
+<!--        <table schema="elephant" tableName="tmp_student" domainObjectName="TmpStudent"-->
+<!--               enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+<!--               enableUpdateByExample="false" selectByExampleQueryId="false">-->
+<!--        </table>-->
+<!--        <table schema="elephant" tableName="tmp_course" domainObjectName="TmpCourse"-->
+<!--               enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+<!--               enableUpdateByExample="false" selectByExampleQueryId="false">-->
+<!--        </table>-->
+<!--        <table schema="elephant" tableName="tmp_teacher" domainObjectName="TmpTeacher"-->
+<!--               enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+<!--               enableUpdateByExample="false" selectByExampleQueryId="false">-->
+<!--        </table>-->
+<!--        <table schema="elephant" tableName="tmp_score" domainObjectName="TmpScore"-->
+<!--               enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+<!--               enableUpdateByExample="false" selectByExampleQueryId="false">-->
+<!--        </table>-->
+<!--        <table schema="elephant" tableName="user_login_log" domainObjectName="UserLoginLog"-->
+<!--               enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+<!--               enableUpdateByExample="false" selectByExampleQueryId="false">-->
+<!--        </table>-->
+<!--        <table schema="elephant" tableName="user_login" domainObjectName="UserLogin"-->
+<!--               enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+<!--               enableUpdateByExample="false" selectByExampleQueryId="false">-->
+<!--        </table>-->
+<!--        <table schema="elephant" tableName="problem" domainObjectName="Problem"-->
+<!--               enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+<!--               enableUpdateByExample="false" selectByExampleQueryId="false">-->
+<!--        </table>-->
+<!--        <table schema="elephant" tableName="problem_concat" domainObjectName="ProblemConcat"-->
+<!--               enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+<!--               enableUpdateByExample="false" selectByExampleQueryId="false">-->
+<!--        </table>-->
     </context>
 </generatorConfiguration>
