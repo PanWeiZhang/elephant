@@ -22,7 +22,7 @@
     <result column="caption" jdbcType="LONGVARBINARY" property="caption" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, rank, title, description, status, industry_one_id, industry_two_id, sponsor_id, 
+    id, `rank`, `title`, `description`, `status`, industry_one_id, industry_two_id, sponsor_id,
     handler_id, problem_concat_id, cost, cost_gold, create_time, update_time
   </sql>
   <sql id="Blob_Column_List">
