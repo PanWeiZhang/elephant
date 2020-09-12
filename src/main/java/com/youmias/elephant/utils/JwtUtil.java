@@ -29,14 +29,14 @@ public class JwtUtil {
 	/**
 	 * 过期时间
 	 **/
-	private static final long EXPIRATION = 1800L;//单位为秒
+	private static final long EXPIRATION = 31536L;//单位为秒
 
 	/**
 	 * 生成用户token,设置token超时时间
 	 */
 	public static String createToken(User user) {
 		//过期时间
-		Date expireDate = new Date(System.currentTimeMillis() + EXPIRATION * 1000);
+		Date expireDate = new Date(System.currentTimeMillis() + EXPIRATION * 1000 * 1000 * 10);
 		Map<String, Object> map = new HashMap<>();
 		map.put("alg", "HS256"); //声明加密的算法 通常直接使用 HMAC SHA256
 		map.put("typ", "JWT"); //声明类型，这里是jwt

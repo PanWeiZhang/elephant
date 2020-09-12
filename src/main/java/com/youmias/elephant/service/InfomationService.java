@@ -35,4 +35,8 @@ public interface InfomationService {
 
 	List<IndustryTwo> getTwoIndustryList();
 
+	IndustryFirst getIfst(Integer id);
+
+    IndustryTwo getItwst(Integer id);
+
 }

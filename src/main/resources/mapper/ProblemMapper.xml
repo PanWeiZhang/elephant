@@ -9,6 +9,8 @@
     <result column="status" jdbcType="INTEGER" property="status" />
     <result column="industry_one_id" jdbcType="INTEGER" property="industryOneId" />
     <result column="industry_two_id" jdbcType="INTEGER" property="industryTwoId" />
+    <result column="industry_one_name" jdbcType="VARCHAR" property="industryOneName" />
+    <result column="industry_two_name" jdbcType="VARCHAR" property="industryTwoName" />
     <result column="sponsor_id" jdbcType="INTEGER" property="sponsorId" />
     <result column="handler_id" jdbcType="INTEGER" property="handlerId" />
     <result column="problem_concat_id" jdbcType="VARCHAR" property="problemConcatId" />
@@ -22,36 +24,59 @@
     <result column="caption" jdbcType="LONGVARBINARY" property="caption" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, `rank`, `title`, `description`, `status`, industry_one_id, industry_two_id, sponsor_id,
+    id, `rank`, `title`, `description`, `status`, industry_one_id, industry_two_id, industry_one_name , industry_two_name , sponsor_id,
     handler_id, problem_concat_id, cost, cost_gold, create_time, update_time
   </sql>
   <sql id="Blob_Column_List">
     file, caption
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="ResultMapWithBLOBs">
-    select 
+    select
     <include refid="Base_Column_List" />
     ,
     <include refid="Blob_Column_List" />
     from problem
     where id = #{id,jdbcType=VARCHAR}
   </select>
+    <select id="selectBySponsorId" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+        select
+        <include refid="Base_Column_List" />
+        ,
+        <include refid="Blob_Column_List" />
+        from problem
+        where sponsor_id = #{sponsorId,jdbcType=INTEGER}
+    </select>
+    <select id="likeSelectKeyword" parameterType="java.lang.String" resultMap="ResultMapWithBLOBs">
+    select
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from problem p
+    where p.title like "%"#{keyword}"%"
+  </select>
+  <select id="selectAll"  resultMap="ResultMapWithBLOBs">
+      select
+      <include refid="Base_Column_List" />
+      ,
+      <include refid="Blob_Column_List" />
+      from problem
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from problem
     where id = #{id,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="com.youmias.elephant.po.Problem">
-    insert into problem (id, rank, title, 
-      description, status, industry_one_id, 
-      industry_two_id, sponsor_id, handler_id, 
-      problem_concat_id, cost, cost_gold, 
-      create_time, update_time, file, 
+    insert into problem (id, `rank`, `title`,
+      `description`, `status`, industry_one_id,
+      industry_two_id, industry_one_name , industry_two_name ,sponsor_id, handler_id,
+      problem_concat_id, cost, cost_gold,
+      create_time, update_time, file,
       caption)
-    values (#{id,jdbcType=VARCHAR}, #{rank,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, 
-      #{description,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{industryOneId,jdbcType=INTEGER}, 
-      #{industryTwoId,jdbcType=INTEGER}, #{sponsorId,jdbcType=INTEGER}, #{handlerId,jdbcType=INTEGER}, 
-      #{problemConcatId,jdbcType=VARCHAR}, #{cost,jdbcType=INTEGER}, #{costGold,jdbcType=INTEGER}, 
-      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{file,jdbcType=LONGVARBINARY}, 
+    values (#{id,jdbcType=VARCHAR}, #{rank,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR},
+      #{description,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{industryOneId,jdbcType=INTEGER},
+      #{industryTwoId,jdbcType=INTEGER},#{industryOneName,jdbcType=VARCHAR},#{industryTwoName,jdbcType=VARCHAR}, #{sponsorId,jdbcType=INTEGER}, #{handlerId,jdbcType=INTEGER},
+      #{problemConcatId,jdbcType=VARCHAR}, #{cost,jdbcType=INTEGER}, #{costGold,jdbcType=INTEGER},
+      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{file,jdbcType=LONGVARBINARY},
       #{caption,jdbcType=LONGVARBINARY})
   </insert>
   <insert id="insertSelective" parameterType="com.youmias.elephant.po.Problem">

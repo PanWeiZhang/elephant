@@ -36,6 +36,7 @@ public class UserController extends BaseController{
 	UserContactService userContactService;
 
 
+
 	/**
 	 * @Dec 注册用户
 	 * @Author zpw

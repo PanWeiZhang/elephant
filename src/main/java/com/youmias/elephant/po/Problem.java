@@ -17,6 +17,10 @@ public class Problem {
 
     private Integer industryTwoId;
 
+    private String industryOneName;
+
+    private String industryTwoName;
+
     private Integer sponsorId;
 
     private Integer handlerId;
@@ -34,6 +38,22 @@ public class Problem {
     private byte[] file;
 
     private byte[] caption;
+
+    public String getIndustryOneName() {
+        return industryOneName;
+    }
+
+    public void setIndustryOneName(String industryOneName) {
+        this.industryOneName = industryOneName;
+    }
+
+    public String getIndustryTwoName() {
+        return industryTwoName;
+    }
+
+    public void setIndustryTwoName(String industryTwoName) {
+        this.industryTwoName = industryTwoName;
+    }
 
     public String getId() {
         return id;

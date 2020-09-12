@@ -41,13 +41,13 @@ public class JwtFilter implements Filter {
 		else {
 
 			if (token == null) {
-				response.getWriter().write("没有token！");
+				response.getWriter().write("400"); //没有token,非法请求
 				return;
 			}
 
 			Map<String, Claim> userData = JwtUtil.verifyToken(token);
 			if (userData == null) {
-				response.getWriter().write("token不合法！");
+				response.getWriter().write("401"); //token不合法，未授权
 				return;
 			}
 			chain.doFilter(req, res);

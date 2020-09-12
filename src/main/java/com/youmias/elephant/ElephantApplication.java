@@ -13,8 +13,6 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 @SpringBootApplication
 public class ElephantApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(ElephantApplication.class, args);
-	}
+	public static void main(String[] args) { SpringApplication.run(ElephantApplication.class, args);  }
 
 }

@@ -99,4 +99,14 @@ public class InfomationServiceImpl implements InfomationService {
 		return industryTwoMapper.getTwoIndustryList();
 	}
 
+    @Override
+    public IndustryFirst getIfst(Integer id) {
+        return industryFirstMapper.selectByPrimaryKey(id);
+    }
+
+    @Override
+    public IndustryTwo getItwst(Integer id) {
+        return industryTwoMapper.selectByPrimaryKey(id);
+    }
+
 }
