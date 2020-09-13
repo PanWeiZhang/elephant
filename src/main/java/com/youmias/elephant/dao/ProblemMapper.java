@@ -19,10 +19,16 @@ public interface ProblemMapper {
 
     int updateByPrimaryKey(Problem record);
 
-    List<Problem> selectAll();
+    List<Problem> selectAll(Problem problem);
 
     List<Problem> likeSelectKeyword(String keyword);
 
     List<Problem> selectBySponsorId(Integer sponsorId);
+
+    List<Problem> selectByHandlerId(Integer handlerId);
+
+    void updateHnaleFiled(Problem problem);
+
+    void updateCloseFiled(Problem problem);
 
 }

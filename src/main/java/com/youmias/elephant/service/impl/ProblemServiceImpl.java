@@ -28,8 +28,8 @@ public class ProblemServiceImpl implements ProblemService {
     }
 
     @Override
-    public Page<Problem> getProblemList() {
-        return (Page<Problem>) problemMapper.selectAll();
+    public Page<Problem> getProblemList(Problem problem) {
+        return (Page<Problem>) problemMapper.selectAll(problem);
     }
 
     @Override
@@ -40,5 +40,20 @@ public class ProblemServiceImpl implements ProblemService {
     @Override
     public Page<Problem> selectByProblemList(Integer sponsorId) {
         return (Page<Problem>) problemMapper.selectBySponsorId(sponsorId);
+    }
+
+    @Override
+    public Page<Problem> selectByProblemedList(Integer handlerId) {
+        return (Page<Problem>) problemMapper.selectByHandlerId(handlerId);
+    }
+
+    @Override
+    public void updateHanlePeople(Problem problem) {
+        problemMapper.updateHnaleFiled(problem);
+    }
+
+    @Override
+    public void closeProblem(Problem problem) {
+        problemMapper.updateCloseFiled(problem);
     }
 }

@@ -46,6 +46,14 @@
         from problem
         where sponsor_id = #{sponsorId,jdbcType=INTEGER}
     </select>
+    <select id="selectByHandlerId" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+        select
+        <include refid="Base_Column_List" />
+        ,
+        <include refid="Blob_Column_List" />
+        from problem
+        where handler_id = #{handlerId,jdbcType=INTEGER}
+    </select>
     <select id="likeSelectKeyword" parameterType="java.lang.String" resultMap="ResultMapWithBLOBs">
     select
     <include refid="Base_Column_List" />
@@ -59,7 +67,7 @@
       <include refid="Base_Column_List" />
       ,
       <include refid="Blob_Column_List" />
-      from problem
+      from problem where status = #{status,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from problem
@@ -267,6 +275,19 @@
       cost_gold = #{costGold,jdbcType=INTEGER},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateHnaleFiled" parameterType="com.youmias.elephant.po.Problem">
+    update problem
+    set handler_id = #{handlerId,jdbcType=INTEGER},
+    status = #{status,jdbcType=INTEGER},
+    update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+    <update id="updateCloseFiled" parameterType="com.youmias.elephant.po.Problem">
+    update problem
+    set status = #{status,jdbcType=INTEGER},
+    update_time = #{updateTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=VARCHAR}
   </update>
 </mapper>

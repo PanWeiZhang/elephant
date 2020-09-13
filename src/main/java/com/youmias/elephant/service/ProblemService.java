@@ -11,9 +11,16 @@ public interface  ProblemService {
 
     void insertProblem(Problem problem);
 
-    Page<Problem> getProblemList();
+    Page<Problem> getProblemList(Problem problem);
 
     Page<Problem> byKeywordProblemList(String keyword);
 
     Page<Problem> selectByProblemList(Integer sponsorId);
+
+    Page<Problem> selectByProblemedList(Integer handlerId);
+
+    void updateHanlePeople(Problem problem);
+
+    void closeProblem(Problem problem);
+
 }

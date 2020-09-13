@@ -48,6 +48,80 @@ public class ProblemController extends BaseController{
     }
 
     /**
+     * @Dec 我的回答
+     * @Author zpw
+     * @Time 2020-09-13
+     *
+     */
+
+    @GetMapping("/secure/myProblemsed")
+    public Map<String, Object> bymyProblemsQues(@RequestParam(defaultValue = "1") int pageNo, @RequestParam(defaultValue = "10") int pageSize,@RequestParam(name = "handlerId") Integer handlerId){
+        try{
+            Map<String,Object> map = new HashMap<>();
+            PageHelper.startPage(pageNo,pageSize);
+            PageInfo<Problem> pageInfo = new PageInfo<>(problemService.selectByProblemedList(handlerId));
+            map.put("data",pageInfo);
+            map.put("msg","成功");
+            map.put("status","success");
+            map.put("code","200");
+            return  map;
+        }catch (RuntimeException e){
+            throw new RuntimeException(e);
+        }
+    }
+
+    /**
+     * @Dec 接受问题
+     * @Author zpw
+     * @Time 2020-09-13
+     *
+     */
+
+    @PostMapping("/secure/hanleProblem")
+    public Map<String, Object> hanleProblems(@RequestBody Problem problem){
+        try{
+            Map<String,Object> map = new HashMap<>();
+            Problem p = new Problem();
+            p.setId(problem.getId());
+            p.setHandlerId(problem.getHandlerId());
+            p.setStatus(2);
+            p.setUpdateTime(new Date());
+            problemService.updateHanlePeople(p);
+            map.put("msg","成功");
+            map.put("status","success");
+            map.put("code","200");
+            return  map;
+        }catch (RuntimeException e){
+            throw new RuntimeException(e);
+        }
+    }
+
+    /**
+     * @Dec 关闭问题
+     * @Author zpw
+     * @Time 2020-09-13
+     *
+     */
+
+    @PostMapping("/secure/closeProblems")
+    public Map<String, Object> closeProblems(@RequestBody Problem problem){
+        try{
+            Map<String,Object> map = new HashMap<>();
+            Problem p = new Problem();
+            p.setId(problem.getId());
+            p.setStatus(3);
+            p.setUpdateTime(new Date());
+            problemService.closeProblem(p);
+            map.put("msg","成功");
+            map.put("status","success");
+            map.put("code","200");
+            return  map;
+        }catch (RuntimeException e){
+            throw new RuntimeException(e);
+        }
+    }
+
+    /**
      * @Dec 根据关键字查询问题
      * @Author zpw
      * @Time 2020-09-12
@@ -78,11 +152,13 @@ public class ProblemController extends BaseController{
      */
 
     @GetMapping("/secure/selectProblem")
-    public Map<String, Object> selectProblemFn(@RequestParam(defaultValue = "1") int pageNo, @RequestParam(defaultValue = "10") int pageSize){
+    public Map<String, Object> selectProblemFn(@RequestParam Integer status, @RequestParam Integer pageNo , @RequestParam Integer pageSize){
         try{
             Map<String,Object> map = new HashMap<>();
+            Problem p = new Problem();
+            p.setStatus(status);
             PageHelper.startPage(pageNo,pageSize);
-            PageInfo<Problem> pageInfo = new PageInfo<>(problemService.getProblemList());
+            PageInfo<Problem> pageInfo = new PageInfo<>(problemService.getProblemList(p));
             map.put("data",pageInfo);
             map.put("msg","成功");
             map.put("status","success");
